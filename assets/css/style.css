@@ -36,9 +36,33 @@ p, h3 {
 }
 
 .align-abajo {
-    padding-top: 450px;
+    padding-top: 440px;
 }
 
-.text-color {
+.color-rosa {
     color: #B55BED;
+}
+
+.color-azul {
+    color: #16A4A8;
+}
+
+.color-gris {
+    color: #5E7172;
+}
+
+.bg-azul{
+    background-color: #16A4A8;
+}
+
+.bg-rosa {
+    background-color: #B55BED;
+}
+
+.experiencia-bg {
+    background-color: #F4F2F7;
+}
+
+h5 {
+    font-family: 'Quicksand', sans-serif;
 }
