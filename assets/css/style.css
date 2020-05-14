@@ -3,6 +3,7 @@
     background-image: url(../img/footer-bg.png);
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: top;
 }
 
 .rosado {
@@ -16,9 +17,9 @@
 .header-section {
     background-image: url(../img/hero-bg.png);
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: top;
     background-size: cover;
-    height: 50rem;
+    height: 45rem;
 }
 
 
@@ -31,5 +32,13 @@ p, h3 {
 }
 
 .espacio {
-    height: 4rem;
+    height: 2rem;
+}
+
+.align-abajo {
+    padding-top: 450px;
+}
+
+.text-color {
+    color: #B55BED;
 }

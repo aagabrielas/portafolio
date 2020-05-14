@@ -41,7 +41,7 @@
 
   <body>
     <!--Navbar!!-->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top rosado py-3">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top rosado py-2">
       <div class="container">
         <button
           class="navbar-toggler"
@@ -54,11 +54,13 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
+        <a class="btn btn-outline-light rounded-pill mr-3 ml-auto" href="#" role="button"
+          >Contáctame</a>
 
-        <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="collapse navbar-collapse text-center" id="navbarNav">
           <ul class="navbar-nav font-weight-bold">
-            <li class="nav-item">
-              <a class="nav-link" href="#">Sobre mí</a>
+            <li class="nav-item d-sm-none d-none d-md-block">
+              <a class="nav-link" href="#Sobre-mi">Sobre mí</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Mi experiencia</a>
@@ -69,11 +71,10 @@
           </ul>
         </div>
 
-        <a class="btn btn-outline-light rounded-pill" href="#" role="button"
-          >Contáctame</a
-        >
+        <div class="navbar-collapse text-center">
+        </div>
 
-        <a class="navbar-brand d-sm-none d-none d-md-block ml-5"
+        <a class="navbar-brand d-sm-none d-none d-md-none d-lg-block ml-5 mr-auto"
           ><img src="assets/img/logo.svg" alt="Logo de mi marca personal"
         /></a>
       </div>
@@ -83,7 +84,7 @@
     <div class="container espacio"></div>
     <header class="header-section text-white pt-5">
       <div class="container text-center">
-        <h1 class="display-1">¡Hola!</h1>
+        <h1 class="display-1 align-abajo">¡Hola!</h1>
         <h3 class="mt-3">
           Mi nombre es <span class="font-weight-bold">Ana Silva</span><br />y
           soy diseñadora UX/UI
@@ -91,6 +92,16 @@
       </div>
     </header>
 
+    <!--Sobre mí-->
+    <div id="Sobre-mi" class="pt-5 d-sm-none d-none d-md-block"></div>
+
+    <section class="text-center text-color d-sm-none d-none d-md-block">
+      <div class="container pt-4 pb-5 col-lg-6 col-md-8">
+      <h1 class="display-4 pb-4">Sobre mí</h1>
+      <p class="h5 pb-3">Estoy titulada en la carrera de Diseño Gráfico Profesional, cuento con 2 años de experiencia y tengo especial <span class="font-weight-bold">interés en Diseño UX/UI y Diseño Sostenible.</span></p>
+      <p class="pb-4 h5">Soy una <span class="font-weight-bold">persona asertiva, y llena de energía</span> con facilidad para integrarme y/o liderar proyectos o equipos de trabajo multidisciplinarios. <span class="font-weight-bold">Sin miedo a los cambios y siempre motivada a aprender cosas nuevas.</p></span>
+    </div>
+    </section>
     <!--El Typeform-->
     <div
       class="typeform-widget"
@@ -138,36 +149,40 @@
     </div>
 
     <!--el popular footer-->
-    <footer class="bgfooter text-center py-5">
-      <div class="py-5">
+    <footer class="bgfooter text-center py-3 text-white">
+      <div class="py-4">
         <a
           target="_blank"
           class="text-white"
           href="https://www.behance.net/anasilvab96e2f"
-          ><i class="fab fa-behance fa-4x"></i
+          ><i class="fab fa-behance fa-3x"></i
         ></a>
 
         <a
           target="_blank"
           class="text-white"
           href="https://github.com/aagabrielas"
-          ><i class="ml-4 fab fa-github-alt fa-4x"></i
+          ><i class="ml-4 fab fa-github-alt fa-3x"></i
         ></a>
 
         <a
           target="_blank"
           class="text-white"
           href="https://www.linkedin.com/in/anasilvabenitez93/"
-          ><i class="ml-4 fab fa-linkedin-in fa-4x"></i
+          ><i class="ml-4 fab fa-linkedin-in fa-3x"></i
         ></a>
 
         <a
           target="_blank"
           class="text-white"
           href="https://www.instagram.com/aagabrielas/"
-          ><i class="ml-4 fab fa-instagram fa-4x"></i
+          ><i class="ml-4 fab fa-instagram fa-3x"></i
         ></a>
       </div>
+      <p class="h5 font-weight-bold">Gracias por siempre confiar en mi trabajo ❤</p>
+      <img class="mt-5" src="assets/img/logo.svg" alt="Logo de mi marca personal"
+        />
+      <p class="mt-3 font-italic">Vibra - Santiago de Chile, 2020.</p>
     </footer>
 
     <!-- jQuery 3.4.1 first, then Popper.js 1.16.0, then Bootstrap JS 4.4.1-->
