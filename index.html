@@ -38,8 +38,137 @@
       crossorigin="anonymous"
     />
   </head>
+
   <body>
- 
+    <!--Navbar!!-->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top rosado py-3">
+      <div class="container">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav font-weight-bold">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Sobre mí</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Mi experiencia</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Mis trabajos</a>
+            </li>
+          </ul>
+        </div>
+
+        <a class="btn btn-outline-light rounded-pill" href="#" role="button"
+          >Contáctame</a
+        >
+
+        <a class="navbar-brand d-sm-none d-none d-md-block ml-5"
+          ><img src="assets/img/logo.svg" alt="Logo de mi marca personal"
+        /></a>
+      </div>
+    </nav>
+
+    <!--Headerrs-->
+    <div class="container espacio"></div>
+    <header class="header-section text-white pt-5">
+      <div class="container text-center">
+        <h1 class="display-1">¡Hola!</h1>
+        <h3 class="mt-3">
+          Mi nombre es <span class="font-weight-bold">Ana Silva</span><br />y
+          soy diseñadora UX/UI
+        </h3>
+      </div>
+    </header>
+
+    <!--El Typeform-->
+    <div
+      class="typeform-widget"
+      data-url="https://anasilvab93.typeform.com/to/PBUAMD"
+      style="width: 100%; height: 500px;"
+    ></div>
+    <script>
+      (function () {
+        var qs,
+          js,
+          q,
+          s,
+          d = document,
+          gi = d.getElementById,
+          ce = d.createElement,
+          gt = d.getElementsByTagName,
+          id = "typef_orm",
+          b = "https://embed.typeform.com/";
+        if (!gi.call(d, id)) {
+          js = ce.call(d, "script");
+          js.id = id;
+          js.src = b + "embed.js";
+          q = gt.call(d, "script")[0];
+          q.parentNode.insertBefore(js, q);
+        }
+      })();
+    </script>
+    <div
+      style="
+        font-family: Sans-Serif;
+        font-size: 12px;
+        color: #999;
+        opacity: 0.5;
+        padding-top: 5px;
+      "
+    >
+      powered by
+      <a
+        href="https://admin.typeform.com/signup?utm_campaign=PBUAMD&utm_source=typeform.com-01E88XRY8XXPRRXEN29VEW6EZZ-free&utm_medium=typeform&utm_content=typeform-embedded-poweredbytypeform&utm_term=ES"
+        style="color: #999;"
+        target="_blank"
+      >
+        Typeform
+      </a>
+    </div>
+
+    <!--el popular footer-->
+    <footer class="bgfooter text-center py-5">
+      <div class="py-5">
+        <a
+          target="_blank"
+          class="text-white"
+          href="https://www.behance.net/anasilvab96e2f"
+          ><i class="fab fa-behance fa-4x"></i
+        ></a>
+
+        <a
+          target="_blank"
+          class="text-white"
+          href="https://github.com/aagabrielas"
+          ><i class="ml-4 fab fa-github-alt fa-4x"></i
+        ></a>
+
+        <a
+          target="_blank"
+          class="text-white"
+          href="https://www.linkedin.com/in/anasilvabenitez93/"
+          ><i class="ml-4 fab fa-linkedin-in fa-4x"></i
+        ></a>
+
+        <a
+          target="_blank"
+          class="text-white"
+          href="https://www.instagram.com/aagabrielas/"
+          ><i class="ml-4 fab fa-instagram fa-4x"></i
+        ></a>
+      </div>
+    </footer>
 
     <!-- jQuery 3.4.1 first, then Popper.js 1.16.0, then Bootstrap JS 4.4.1-->
     <script
