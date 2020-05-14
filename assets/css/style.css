@@ -1,13 +1,20 @@
 
+body {
+    position: relative;
+}
+h1 {
+    font-family: 'Oleo Script', cursive;
+}
+
+p, h3, h5 {
+    font-family: 'Quicksand', sans-serif;
+}
+
 .bgfooter {
     background-image: url(../img/footer-bg.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
-}
-
-.rosado {
-    background-color: #B55BED;
 }
 
 .navbar a{
@@ -20,19 +27,6 @@
     background-position: top;
     background-size: cover;
     height: 45rem;
-}
-
-
-h1 {
-    font-family: 'Oleo Script', cursive;
-}
-
-p, h3 {
-    font-family: 'Quicksand', sans-serif;
-}
-
-.espacio {
-    height: 2rem;
 }
 
 .align-abajo {
@@ -59,10 +53,7 @@ p, h3 {
     background-color: #B55BED;
 }
 
-.experiencia-bg {
+.bg-gris {
     background-color: #F4F2F7;
-}
+} 
 
-h5 {
-    font-family: 'Quicksand', sans-serif;
-}
