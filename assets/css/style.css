@@ -57,3 +57,8 @@ p, h3, h5 {
     background-color: #F4F2F7;
 } 
 
+.bg-none {
+    background-color: transparent;
+}
+
+
