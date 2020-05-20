@@ -38,7 +38,7 @@ $(".carousel").carousel({
 });
 
 $(window).scroll(function () {
-  if ($("#menu").offset().top > 550) {
+  if ($("#menu").offset().top > 520) {
     $("#menu").addClass("bg-rosa");
   } else {
     $("#menu").removeClass("bg-none");
@@ -48,3 +48,8 @@ $(window).scroll(function () {
 $('.navbar-nav>li>a').on('click', function(){
   $('.navbar-collapse').collapse('hide');
 });
+
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+

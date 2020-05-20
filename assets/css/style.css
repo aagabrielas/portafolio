@@ -1,6 +1,7 @@
 
 body {
     position: relative;
+    background-color: #B55BED;
 }
 h1 {
     font-family: 'Oleo Script', cursive;
@@ -11,7 +12,7 @@ p, h3, h5 {
 }
 
 .bgfooter {
-    background-image: url(../img/footer-bg.png);
+    background-image: url(../img/footer/footer-bg.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
@@ -61,4 +62,26 @@ p, h3, h5 {
     background-color: transparent;
 }
 
+.bg-white {
+    background-color: white;
+}
 
+.icon-small {
+    height: 8em;
+}
+
+.tooltip-inner {
+    background-color:#5E7172;;;
+}
+.tooltip.bs-tooltip-right .arrow:before {
+    border-right-color: #5E7172; !important;
+}
+.tooltip.bs-tooltip-left .arrow:before {
+    border-right-color: #5E7172; !important;
+}
+.tooltip.bs-tooltip-bottom .arrow:before {
+    border-right-color: white; !important;
+}
+.tooltip.bs-tooltip-top .arrow:before {
+    border-right-color: #5E7172; !important;
+}
