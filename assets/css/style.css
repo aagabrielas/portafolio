@@ -69,19 +69,3 @@ p, h3, h5 {
 .icon-small {
     height: 8em;
 }
-
-.tooltip-inner {
-    background-color:#5E7172;;;
-}
-.tooltip.bs-tooltip-right .arrow:before {
-    border-right-color: #5E7172; !important;
-}
-.tooltip.bs-tooltip-left .arrow:before {
-    border-right-color: #5E7172; !important;
-}
-.tooltip.bs-tooltip-bottom .arrow:before {
-    border-right-color: white; !important;
-}
-.tooltip.bs-tooltip-top .arrow:before {
-    border-right-color: #5E7172; !important;
-}

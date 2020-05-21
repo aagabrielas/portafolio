@@ -18,6 +18,7 @@ $(function () {
   });
 });
 
+ /* Swipe carrusel en vista mobile */
 $(".carousel").on("touchstart", function (event) {
   var xClick = event.originalEvent.touches[0].pageX;
   $(this).one("touchmove", function (event) {
@@ -33,10 +34,12 @@ $(".carousel").on("touchstart", function (event) {
   });
 });
 
+/*Quitarle lo automático al carrusel*/
 $(".carousel").carousel({
   interval: false,
 });
 
+/*Que navbar sea transparente y cuando pase 520px cambie de color */
 $(window).scroll(function () {
   if ($("#menu").offset().top > 520) {
     $("#menu").addClass("bg-rosa");
@@ -45,10 +48,12 @@ $(window).scroll(function () {
   }
 });
 
+/*Que le navbar en mobile se colapse automatico al hacer click */
 $('.navbar-nav>li>a').on('click', function(){
   $('.navbar-collapse').collapse('hide');
 });
 
+/*Tooltip */
 $(function () {
   $('[data-toggle="tooltip"]').tooltip()
 })
