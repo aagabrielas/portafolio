@@ -58,3 +58,7 @@ $(function () {
   $('[data-toggle="tooltip"]').tooltip()
 })
 
+/*Arreglo navbar al hacer refresh tiene color*/
+$(document).ready(function(){
+  $(this).scrollTop(0);
+});
