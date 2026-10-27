@@ -3,7 +3,15 @@
 
   .btn-link {
     background: none; border: 0; padding: 0; cursor: pointer;
-    text-decoration: underline; text-underline-offset: 0.2em;
+  }
+
+  /* text links: subrayados en reposo; el hover es un scramble naranja (js/text-scramble.js) */
+  a:not(.btn-pixel):not(.skip-link),
+  .btn-link { text-decoration: underline; text-underline-offset: 0.2em; }
+  /* con movimiento reducido o pausa no hay scramble: queda el cambio de color */
+  html.pausar-animaciones :is(a:not(.btn-pixel):not(.skip-link), .btn-link):is(:hover, :focus-visible) { color: var(--orange); }
+  @media (prefers-reduced-motion: reduce) {
+    :is(a:not(.btn-pixel):not(.skip-link), .btn-link):is(:hover, :focus-visible) { color: var(--orange); }
   }
 
   /* hero: título centrado entre dos adornos, directo sobre el fondo */
