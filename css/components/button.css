@@ -1,0 +1,42 @@
+/* Botón pixel: esquinas "redondeadas" de 4 px en escalón, borde de 4 px y relleno que barre al hacer hover.
+   Colores por confirmar: se cambian solo en los tokens --btn-* de css/tokens.css. */
+@layer components {
+  .btn-pixel {
+    --step: 4px;
+    --bw: 4px;
+    position: relative; isolation: isolate;
+    display: inline-flex; align-items: center; justify-content: center;
+    min-inline-size: 9rem; min-block-size: 2.75rem; padding: 0.5rem 1.25rem;
+    border: 0; background: var(--btn-border); color: var(--btn-text);
+    font: inherit; font-weight: 700; text-decoration: none; cursor: pointer;
+    clip-path: polygon(
+      0 var(--step), var(--step) var(--step), var(--step) 0,
+      calc(100% - var(--step)) 0, calc(100% - var(--step)) var(--step), 100% var(--step),
+      100% calc(100% - var(--step)), calc(100% - var(--step)) calc(100% - var(--step)), calc(100% - var(--step)) 100%,
+      var(--step) 100%, var(--step) calc(100% - var(--step)), 0 calc(100% - var(--step)));
+  }
+  /* cara interior: deja a la vista el borde de 4 px y recorta el barrido */
+  .btn-pixel__face {
+    position: absolute; inset: var(--bw); z-index: -1; overflow: hidden; background: var(--btn-bg);
+    clip-path: polygon(
+      0 var(--step), var(--step) var(--step), var(--step) 0,
+      calc(100% - var(--step)) 0, calc(100% - var(--step)) var(--step), 100% var(--step),
+      100% calc(100% - var(--step)), calc(100% - var(--step)) calc(100% - var(--step)), calc(100% - var(--step)) 100%,
+      var(--step) 100%, var(--step) calc(100% - var(--step)), 0 calc(100% - var(--step)));
+  }
+  .btn-pixel__fill {
+    position: absolute; inset: 0 -20%; background: var(--btn-fill);
+    transform: translateX(var(--fx, -101%)) skewX(-20deg);
+    transition: transform .35s cubic-bezier(.2, .7, .2, 1);
+  }
+  .btn-pixel__fill.is-reset { transition: none; }
+  .btn-pixel__label { position: relative; transition: color .2s .08s; }
+  .btn-pixel.is-active .btn-pixel__label { color: var(--btn-text-hover); }
+
+  .btn-pixel:focus-visible { outline: 3px solid var(--focus); outline-offset: 4px; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .btn-pixel__fill, .btn-pixel__label { transition: none; }
+  }
+  .pausar-animaciones .btn-pixel__fill, .pausar-animaciones .btn-pixel__label { transition: none; }
+}

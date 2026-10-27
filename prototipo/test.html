@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><style>html,body{margin:0;height:100%;background:#141414;overflow:hidden}canvas{position:fixed;inset:0;width:100%;height:100%}</style></head>
+<body><canvas id="smoke"></canvas>
+<pre id="log" style="position:fixed;z-index:9;left:8px;top:8px;margin:0;color:#fff;font:11px monospace;white-space:pre-wrap"></pre>
+<script>
+  const _e = console.error; console.error = (...a) => { document.getElementById('log').textContent += a.join(' ') + '\n'; _e(...a); };
+  addEventListener('error', e => document.getElementById('log').textContent += 'ERR ' + e.message + '\n');
+</script>
+<script src="../js/smoke/glitter-smoke.js"></script>
+<script>
+  // Prueba automática: mueve el "mouse" en una dirección y avanza la simulación paso a paso.
+  const q = new URLSearchParams(location.search), dir = q.get('dir') === 'left' ? -1 : 1;
+  const smoke = new GlitterSmoke(document.getElementById('smoke'));
+  for (const [k, v] of q) if (k in smoke.cfg) smoke.cfg[k] = +v;
+  const W = innerWidth, H = innerHeight;
+  document.getElementById('log').textContent += 'gl=' + !!smoke.gl + ' hidden=' + document.getElementById('smoke').hidden + '\n';
+  smoke.stop(); smoke.running = true;   // la prueba conduce la simulación a mano
+  const steps = +(q.get('steps') || 120), dt = 1 / 60;
+  requestAnimationFrame(() => { for (let f = 0; f < steps; f++) {
+    if (f < 38) for (let s = 0; s < 1; s++) {
+      const u = f / 38, x = dir > 0 ? W * (.15 + .7 * u) : W * (.85 - .7 * u);
+      const y = H * (.5 + .12 * Math.sin(u * 9));
+      smoke._pointer(x, y);
+    }
+    smoke._step(dt);
+  }
+  const probe = tag => { smoke._render(); const c = smoke.canvas, gl = smoke.gl, px = new Uint8Array(4); let best = 0;
+    // busca el píxel más "lila" (azul - verde) en una cuadrícula
+    for (let i = 1; i < 20; i++) for (let j = 1; j < 10; j++) { gl.readPixels(c.width * i / 20 | 0, c.height * j / 10 | 0, 1, 1, gl.RGBA, gl.UNSIGNED_BYTE, px); best = Math.max(best, px[2] - px[1]); }
+    document.getElementById('log').textContent += tag + ' lila=' + best + ' canvas=' + c.width + 'x' + c.height + '\n'; };
+  const snap = document.createElement('canvas'); snap.width = smoke.canvas.width; snap.height = smoke.canvas.height;
+  snap.style.cssText = 'position:fixed;inset:0;width:100%;height:100%;z-index:5'; document.body.append(snap);
+  probe('tras-sim'); snap.getContext('2d').drawImage(smoke.canvas, 0, 0);
+  let n = 0; (function again() { smoke._render(); if (++n == 4) probe('4-frames-despues'); requestAnimationFrame(again); })(); });
+</script></body></html>

@@ -1,0 +1,120 @@
+/* Blinkies en CSS puro — Ana Silva
+   Requiere la fuente Pixelify Sans (Google Fonts, 700).
+   Pausa: agrega la clase .pausar-animaciones a <html> (o a cualquier contenedor). */
+
+@property --bk-c1 { syntax: "<color>"; inherits: true; initial-value: #000; }
+@property --bk-c2 { syntax: "<color>"; inherits: true; initial-value: #000; }
+@property --bk-c3 { syntax: "<color>"; inherits: true; initial-value: #000; }
+
+.blinkie {
+  --lila: #6B52C8;
+  --lila-2: #9B85F0;
+  --lila-3: #C9BDFF;
+  --lila-osc: #34286A;
+  --naranjo: #F26B1D;
+  --naranjo-2: #FF9B4A;
+  --naranjo-osc: #7A3510;
+  --gris: #8A8A8A;
+  container-type: inline-size;
+  width: 100%;
+  max-width: 600px;
+  display: block;
+  line-height: 0;
+}
+.bk {
+  --u: calc(100cqw / 600);          /* 1 px del diseño original (600×80) */
+  --bw: calc(4 * var(--u));         /* grosor del borde */
+  position: relative;
+  aspect-ratio: 600 / 80;
+  background-color: #000;
+  background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
+  font-family: "Pixelify Sans", ui-monospace, monospace;
+  font-weight: 700;
+  line-height: 1;
+  overflow: hidden;
+  image-rendering: pixelated;
+}
+.bk svg { position: absolute; shape-rendering: crispEdges; }
+.bk-txt { position: absolute; top: 50%; transform: translateY(-50%); white-space: nowrap; letter-spacing: 0; }
+
+@keyframes bk-march {
+  from { background-position: 0 0, 0 100%, 0 0, 100% 0; }
+  to   { background-position: var(--t) 0, calc(-1 * var(--t)) 100%, 0 calc(-1 * var(--t)), 100% var(--t); }
+}
+
+/* 1 · Accesibilidad ------------------------------------------------------ */
+.bk--a11y {
+  --t: calc(40 * var(--u));
+  --dash: linear-gradient(90deg, #fff 0 30%, transparent 0 50%, var(--gris) 0 80%, transparent 0);
+  --dashv: linear-gradient(180deg, #fff 0 30%, transparent 0 50%, var(--gris) 0 80%, transparent 0);
+  background-image: var(--dash), var(--dash), var(--dashv), var(--dashv);
+  background-size: var(--t) var(--bw), var(--t) var(--bw), var(--bw) var(--t), var(--bw) var(--t);
+  animation: bk-march .3s steps(2) infinite;
+}
+.bk--a11y .bk-txt { left: 0; right: calc(90 * var(--u)); text-align: center; color: #fff; font-size: calc(38 * var(--u)); }
+.bk--a11y svg { right: calc(22 * var(--u)); top: calc(9 * var(--u)); width: calc(60 * var(--u)); height: calc(63 * var(--u)); color: var(--naranjo); }
+.bk--a11y .rayo-a { fill: var(--naranjo-2); animation: bk-spoke .3s steps(1) infinite; }
+.bk--a11y .rayo-b { fill: var(--lila-3); animation: bk-spoke2 .3s steps(1) infinite; }
+@keyframes bk-spoke { 0% { opacity: 1; } 50% { opacity: 0; } }
+@keyframes bk-spoke2 { 0% { opacity: 0; } 50% { opacity: 1; } }
+
+/* 2 · Design Systems ----------------------------------------------------- */
+.bk--ds {
+  --t: calc(12 * var(--u));
+  --dash: linear-gradient(90deg, var(--bk-c3) 0 66%, transparent 0);
+  --dashv: linear-gradient(180deg, var(--bk-c3) 0 66%, transparent 0);
+  --bw: calc(3 * var(--u));
+  background-image: var(--dash), var(--dash), var(--dashv), var(--dashv);
+  background-size: var(--t) var(--bw), var(--t) var(--bw), var(--bw) var(--t), var(--bw) var(--t);
+  background-position: 0 0, 0 100%, 0 0, 100% 0;
+  background-origin: content-box;
+  background-clip: content-box;
+  padding: calc(3 * var(--u));
+  box-sizing: border-box;
+  animation: bk-pulse .6s step-end infinite;
+}
+.bk--ds .bk-txt {
+  left: 0; right: 0; text-align: center;
+  font-size: calc(44 * var(--u));
+  color: var(--bk-c1);
+  --o: calc(2 * var(--u));
+  text-shadow:
+    var(--o) 0 var(--bk-c2), calc(-1 * var(--o)) 0 var(--bk-c2), 0 var(--o) var(--bk-c2), 0 calc(-1 * var(--o)) var(--bk-c2),
+    var(--o) var(--o) var(--bk-c2), calc(-1 * var(--o)) var(--o) var(--bk-c2), var(--o) calc(-1 * var(--o)) var(--bk-c2), calc(-1 * var(--o)) calc(-1 * var(--o)) var(--bk-c2);
+}
+@keyframes bk-pulse {
+  0%   { --bk-c1: var(--lila-osc); --bk-c2: var(--lila);   --bk-c3: var(--naranjo-2); }
+  25%  { --bk-c1: var(--lila);     --bk-c2: var(--lila-2); --bk-c3: var(--naranjo-2); }
+  50%  { --bk-c1: var(--lila-2);   --bk-c2: var(--lila-3); --bk-c3: var(--naranjo-osc); }
+  75%  { --bk-c1: var(--lila);     --bk-c2: var(--lila-2); --bk-c3: var(--naranjo); }
+  100% { --bk-c1: var(--lila-osc); --bk-c2: var(--lila);   --bk-c3: var(--naranjo-2); }
+}
+
+/* 3 · Senior Product Designer ------------------------------------------- */
+.bk--spd {
+  --t: calc(48 * var(--u));
+  --seg: var(--lila) 0 16.66%, var(--naranjo) 0 33.33%, var(--lila-3) 0 50%, var(--naranjo-2) 0 66.66%, var(--lila-2) 0 83.33%, #fff 0;
+  background-image:
+    linear-gradient(90deg, var(--seg)), linear-gradient(90deg, var(--seg)),
+    linear-gradient(180deg, var(--seg)), linear-gradient(180deg, var(--seg));
+  background-size: var(--t) var(--bw), var(--t) var(--bw), var(--bw) var(--t), var(--bw) var(--t);
+  animation: bk-march .66s steps(6) infinite;
+}
+.bk--spd svg { left: calc(10 * var(--u)); top: calc(20 * var(--u)); width: calc(45 * var(--u)); height: calc(27 * var(--u)); animation: bk-cycle .66s step-end infinite; animation-delay: -.11s; }
+.bk--spd .bk-txt { left: calc(64 * var(--u)); font-size: calc(38 * var(--u)); animation: bk-cycle .66s step-end infinite; }
+@keyframes bk-cycle {
+  0%      { color: var(--lila-2); }
+  16.66%  { color: var(--lila); }
+  33.33%  { color: var(--lila-3); }
+  50%     { color: var(--naranjo); }
+  66.66%  { color: var(--naranjo-2); }
+  83.33%  { color: #fff; }
+}
+
+/* Pausa y movimiento reducido ------------------------------------------- */
+.pausar-animaciones .bk, .pausar-animaciones .bk * { animation-play-state: paused !important; }
+@media (prefers-reduced-motion: reduce) {
+  .bk, .bk * { animation: none !important; }
+  .bk--ds { --bk-c1: var(--lila); --bk-c2: var(--lila-2); --bk-c3: var(--naranjo); }
+  .bk--spd .bk-txt, .bk--spd svg { color: var(--lila-2); }
+}

@@ -1,0 +1,59 @@
+/* Reproductor MP3 horizontal, decorativo (sin audio). Todo se mide en cqw para escalar con su contenedor. */
+@layer components {
+  .mp3 { container-type: inline-size; inline-size: min(100%, 20rem); margin-inline: auto; }
+  .mp3__body {
+    position: relative; aspect-ratio: 2.1; border-radius: 7cqw; overflow: hidden;
+    /* plata metalizada: degradado claro-oscuro-claro + banda de luz diagonal */
+    background:
+      linear-gradient(115deg, transparent 36%, rgba(255, 255, 255, .55) 46%, transparent 56%),
+      linear-gradient(160deg, #f1f1f5 0%, #b9bac3 34%, #8e8f99 58%, #d3d4db 100%);
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, .35), 0 4cqw 7cqw -2cqw rgba(0, 0, 0, .8);
+  }
+  .mp3__body::after {                          /* luz y sombra en los bordes */
+    content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
+    box-shadow: inset 0 .8cqw 0 rgba(255, 255, 255, .7), inset 0 -1.2cqw 2cqw rgba(40, 40, 55, .35);
+  }
+
+  .mp3__panel {
+    position: absolute; left: 6cqw; top: 6cqw; inline-size: 46cqw; block-size: 35.6cqw; border-radius: 4cqw;
+    background: linear-gradient(160deg, #26232f, #0b0a10 70%);
+    box-shadow: inset 0 0 0 .5cqw rgba(255, 255, 255, .08), 0 .6cqw 1.2cqw rgba(0, 0, 0, .35);
+  }
+  .mp3__screen {
+    position: absolute; left: 2.5cqw; top: 2.5cqw; inline-size: 41cqw; block-size: 22cqw; border-radius: 1.2cqw; overflow: hidden;
+    background: linear-gradient(170deg, #2c3cff, #1320b8 70%);
+    box-shadow: inset 0 0 0 .5cqw rgba(0, 0, 40, .5); color: #e4ecff;
+  }
+  .mp3__screen::after { content: ""; position: absolute; inset: 0 0 55% 0; background: linear-gradient(rgba(255, 255, 255, .12), transparent); }
+  .mp3__state { position: absolute; left: 2.5cqw; top: 2cqw; inline-size: 2.6cqw; fill: currentColor; }
+  .mp3__battery {
+    position: absolute; right: 2.5cqw; top: 2.1cqw; inline-size: 4.4cqw; block-size: 2.1cqw;
+    border: .35cqw solid currentColor; border-radius: .4cqw;
+    background: linear-gradient(currentColor, currentColor) 0 0 / 70% 100% no-repeat;
+  }
+  .mp3__info { position: absolute; inset: 7cqw 2.5cqw 0; font-family: ui-monospace, "Cascadia Mono", Consolas, monospace; }
+  .mp3__info p { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .mp3__song { font-size: 3.7cqw; line-height: 1.25; color: #fff; }
+  .mp3__artist { font-size: 3.1cqw; line-height: 1.25; margin-block-start: 1cqw; color: #aeb9ff; }
+  .mp3__brand {
+    position: absolute; inset-inline: 0; bottom: 2.4cqw; text-align: center;
+    font: italic 700 3.1cqw/1 Georgia, serif; letter-spacing: .08em; color: #d6d2e6; text-transform: uppercase;
+  }
+
+  .mp3__wheel {
+    position: absolute; left: 56cqw; top: 7.8cqw; inline-size: 32cqw; aspect-ratio: 1; border-radius: 50%;
+    background: radial-gradient(circle at 50% 30%, #fff, #e4e4ea);
+    box-shadow: 0 0 0 1.1cqw rgba(0, 0, 0, .55), inset 0 -.8cqw 1.4cqw rgba(0, 0, 0, .15), 0 .5cqw 1cqw rgba(0, 0, 0, .4);
+  }
+  .mp3__key { position: absolute; display: grid; place-items: center; color: #6d6d78; font: 400 6cqw/1 var(--font-body); }
+  .mp3__key svg { inline-size: 5cqw; fill: currentColor; }
+  .mp3__key--up { top: 5%; left: 50%; translate: -50% 0; }
+  .mp3__key--down { bottom: 5%; left: 50%; translate: -50% 0; }
+  .mp3__key--prev { left: 6%; top: 50%; translate: 0 -50%; }
+  .mp3__key--next { right: 6%; top: 50%; translate: 0 -50%; }
+  .mp3__center {
+    position: absolute; inset: 31%; border-radius: 50%;
+    background: radial-gradient(circle at 50% 30%, #fff, #ececf1);
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, .12), 0 .6cqw 1.2cqw rgba(0, 0, 0, .3), inset 0 .3cqw 0 #fff;
+  }
+}
