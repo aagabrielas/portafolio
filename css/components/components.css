@@ -16,9 +16,11 @@
 
   /* hero: título centrado entre dos adornos, directo sobre el fondo */
   .hero { display: grid; justify-items: center; gap: var(--space-4); padding-block: var(--space-4); }
-  .hero__title { max-inline-size: 48rem; text-align: center; font-size: clamp(1.75rem, 1rem + 2.5vw, 2.5rem); line-height: 1.2; }
+  .hero__title { max-inline-size: 60rem; text-align: center; font-size: clamp(1.75rem, 1rem + 2.5vw, 2.5rem); line-height: 1.2; }
   /* hover: las letras cercanas al cursor cambian de peso (ver js/weight-title.js) */
-  .hero__title { font-weight: 700; }
+  .hero__title { font-family: var(--font-hero); font-weight: 700; }
+  /* los adornos del hero comparten la tipografía; los glifos que Silkscreen no trae caen a Verdana */
+  .hero .divider { font-family: var(--font-hero), var(--font-body); }
   .wt-line { display: block; white-space: nowrap; }
   .wt-word { display: inline-block; white-space: nowrap; }
   .wt-char { display: inline-block; }

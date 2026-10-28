@@ -9,7 +9,7 @@
   <link rel="alternate" hreflang="es" href=".">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@700&family=Silkscreen:wght@400;700&display=swap">
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/layout.css">
@@ -24,7 +24,7 @@
 
   <div class="wrap">
     <header class="site-header">
-      <p class="wordmark" aria-label="Ana Silva">αηα sιℓvα</p>
+      <p class="wordmark"><span aria-hidden="true">αηα sιℓvα</span><span class="visually-hidden">Ana Silva</span></p>
       <nav class="site-header__tools" aria-label="Opciones">
         <a href="en/" hreflang="en" lang="en">English</a>
         <button type="button" class="btn-link" id="pause" aria-pressed="false">Pausar animaciones</button>
@@ -71,7 +71,7 @@
           <figure class="avatar">
             <p class="avatar__name" aria-hidden="true">αηα sιℓvα</p>
             <div class="avatar__frame" aria-hidden="true"><mld-character scale="2.5" scale-sm="2"></mld-character></div>
-            <figcaption>Mood: ⸜(｡˃ ᵕ ˂)⸝♡</figcaption>
+            <figcaption aria-hidden="true">Mood: ⸜(｡˃ ᵕ ˂)⸝♡</figcaption>
           </figure>
           <!-- Decorativo: sin audio todavía, por eso oculto a lectores de pantalla y sin controles enfocables. -->
           <div class="mp3" aria-hidden="true">
@@ -100,7 +100,7 @@
 
         <div class="col">
           <section class="window window--clear" aria-labelledby="proyectos">
-            <h2 class="window__bar" id="proyectos">†«---·( xX_Miiz_PrOyecToSz_Xx )·---»†</h2>
+            <h2 class="window__bar" id="proyectos"><span aria-hidden="true">†«---·( xX_Miiz_PrOyecToSz_Xx )·---»†</span><span class="visually-hidden">Mis proyectos</span></h2>
             <div class="window__body">
               <article class="project" style="display:grid;gap:var(--space-3)">
                 <h3>Netia</h3>
@@ -120,7 +120,7 @@
       <div class="columns columns--plain">
         <div class="col">
           <section class="window window--outlined" aria-labelledby="sobre-mi">
-            <h2 class="window__bar" id="sobre-mi">sOoBRee_Mii</h2>
+            <h2 class="window__bar" id="sobre-mi"><span aria-hidden="true">sOoBRee_Mii</span><span class="visually-hidden">Sobre mí</span></h2>
             <div class="window__body">
               <div class="about-item">
                 <h3 class="about-item__label">Mi estilo</h3>
@@ -154,7 +154,7 @@
 
         <div class="col">
           <section class="window" aria-labelledby="random">
-            <h2 class="window__bar" id="random">cOzAs_rAnDoM</h2>
+            <h2 class="window__bar" id="random"><span aria-hidden="true">cOzAs_rAnDoM</span><span class="visually-hidden">Cosas random</span></h2>
             <div class="window__body">
               <h3>Papelería creativa</h3>
               <h3>Ilustraciones</h3>

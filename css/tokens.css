@@ -24,6 +24,7 @@
 
     /* tipografía */
     --font-pixel: "Pixelify Sans", ui-monospace, monospace;
+    --font-hero: "Silkscreen", ui-monospace, monospace;
     --font-body: Verdana, Geneva, "DejaVu Sans", sans-serif;
     --text-body: 1rem;
     --text-small: 0.875rem;
