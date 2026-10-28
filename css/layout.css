@@ -27,13 +27,15 @@
 
   .columns {
     display: grid; gap: var(--space-4); align-items: start;
+  }
+  .col { display: grid; gap: 1.75rem; align-content: start; }
+  /* el panel oscuro solo cubre el avatar y los blinkies */
+  .avatar-card {
+    display: grid; gap: var(--space-4);
     background: rgb(0 0 0 / 0.5);
     padding: var(--space-4);
     border-radius: var(--radius);
   }
-  /* segunda fila: las ventanas van directo sobre el fondo, sin panel */
-  .columns--plain { background: none; padding-block: 0; margin-block-start: var(--space-2); }
-  .col { display: grid; gap: var(--space-4); align-content: start; }
   @media (min-width: 56rem) {
     .columns { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); }
   }

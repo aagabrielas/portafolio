@@ -15,7 +15,6 @@
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/components/blinkies.css">
   <link rel="stylesheet" href="css/components/components.css">
-  <link rel="stylesheet" href="css/components/player.css">
   <link rel="stylesheet" href="css/components/button.css">
 </head>
 <body>
@@ -38,89 +37,45 @@
         <p class="divider" aria-hidden="true">｡ ₊°༺❤︎༻°₊ ｡</p>
       </section>
 
-      <ul class="blinkies" aria-label="Especialidades">
-        <li>
-          <div class="blinkie" role="img" aria-label="Senior Product Designer">
-            <div class="bk bk--spd">
-              <svg viewBox="0 0 15 9" aria-hidden="true"><path fill="currentColor" d="M1 0h1v1h-1zM7 0h1v1h-1zM13 0h1v1h-1zM0 1h3v1h-3zM6 1h3v1h-3zM12 1h3v1h-3zM1 2h1v1h-1zM7 2h1v1h-1zM13 2h1v1h-1zM1 3h2v1h-2zM6 3h3v1h-3zM12 3h2v1h-2zM1 4h3v1h-3zM5 4h5v1h-5zM11 4h3v1h-3zM1 5h13v1h-13zM1 6h13v1h-13zM1 7h2v1h-2zM4 7h3v1h-3zM8 7h3v1h-3zM12 7h2v1h-2zM1 8h13v1h-13z"/></svg>
-              <span class="bk-txt" aria-hidden="true">Senior Product Designer</span>
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="blinkie" role="img" aria-label="Design Systems">
-            <div class="bk bk--ds"><span class="bk-txt" aria-hidden="true">Design Systems</span></div>
-          </div>
-        </li>
-        <li>
-          <div class="blinkie" role="img" aria-label="Accesibilidad">
-            <div class="bk bk--a11y">
-              <span class="bk-txt" aria-hidden="true">Accesibilidad</span>
-              <svg viewBox="0 0 20 21" aria-hidden="true">
-                <path fill="currentColor" d="M8 0h2v1h-2zM7 1h4v1h-4zM7 2h4v1h-4zM8 3h2v1h-2zM8 5h2v1h-2zM8 6h6v1h-6zM8 7h6v1h-6zM8 8h2v1h-2zM8 9h8v1h-8zM8 10h8v1h-8zM14 11h2v1h-2zM14 12h2v1h-2zM14 13h2v1h-2zM14 14h2v1h-2zM14 15h6v1h-6zM14 16h6v1h-6zM6 8h2v1h-2zM4 9h4v1h-4zM3 10h3v1h-3zM3 11h2v1h-2zM2 12h2v1h-2zM2 13h2v1h-2zM2 14h1v1h-1zM13 14h1v1h-1zM2 15h2v1h-2zM12 15h2v1h-2zM2 16h2v1h-2zM12 16h2v1h-2zM3 17h2v1h-2zM11 17h2v1h-2zM3 18h3v1h-3zM10 18h3v1h-3zM4 19h8v1h-8zM6 20h4v1h-4z"/>
-                <path class="rayo-a" d="M7 11h2v1h-2zM7 12h2v1h-2zM7 13h2v1h-2zM5 14h6v1h-6zM7 15h2v1h-2zM7 16h2v1h-2zM7 17h2v1h-2z"/>
-                <path class="rayo-b" d="M5 12h2v1h-2zM9 12h2v1h-2zM6 13h1v1h-1zM9 13h1v1h-1zM6 15h1v1h-1zM9 15h1v1h-1zM5 16h2v1h-2zM9 16h2v1h-2z"/>
-              </svg>
-            </div>
-          </div>
-        </li>
-      </ul>
-
       <div class="columns">
         <div class="col">
+          <div class="avatar-card">
           <figure class="avatar">
-            <p class="avatar__name" aria-hidden="true">αηα sιℓvα</p>
-            <div class="avatar__frame" aria-hidden="true"><mld-character scale="2.5" scale-sm="2"></mld-character></div>
+            <div class="avatar__frame" aria-hidden="true"><mld-character scale="3.5" scale-sm="2.75"></mld-character></div>
+            <p class="avatar__name" aria-hidden="true">αηα_sιℓvα</p>
             <figcaption aria-hidden="true">Mood: ⸜(｡˃ ᵕ ˂)⸝♡</figcaption>
           </figure>
-          <!-- Decorativo: sin audio todavía, por eso oculto a lectores de pantalla y sin controles enfocables. -->
-          <div class="mp3" aria-hidden="true">
-            <div class="mp3__body">
-              <div class="mp3__panel">
-                <div class="mp3__screen">
-                  <svg class="mp3__state" viewBox="0 0 10 10"><path d="M2 1l7 4-7 4z"/></svg>
-                  <span class="mp3__battery"></span>
-                  <div class="mp3__info">
-                    <p class="mp3__song">Nombre de canción</p>
-                    <p class="mp3__artist">Artista</p>
-                  </div>
-                </div>
-                <p class="mp3__brand">Digital MP3 Player</p>
-              </div>
-              <div class="mp3__wheel">
-                <span class="mp3__key mp3__key--up">+</span>
-                <span class="mp3__key mp3__key--prev"><svg viewBox="0 0 14 8"><path d="M1 0v8M7 0v8L1.5 4zM13 0v8L7.5 4z"/></svg></span>
-                <span class="mp3__key mp3__key--next"><svg viewBox="0 0 14 8"><path d="M13 0v8M7 0v8l5.5-4zM1 0v8l5.5-4z"/></svg></span>
-                <span class="mp3__key mp3__key--down">&minus;</span>
-                <span class="mp3__center"></span>
+        <ul class="blinkies" aria-label="Especialidades">
+          <li>
+            <div class="blinkie" role="img" aria-label="Senior Product Designer">
+              <div class="bk bk--spd">
+                <svg viewBox="0 0 15 9" aria-hidden="true"><path fill="currentColor" d="M1 0h1v1h-1zM7 0h1v1h-1zM13 0h1v1h-1zM0 1h3v1h-3zM6 1h3v1h-3zM12 1h3v1h-3zM1 2h1v1h-1zM7 2h1v1h-1zM13 2h1v1h-1zM1 3h2v1h-2zM6 3h3v1h-3zM12 3h2v1h-2zM1 4h3v1h-3zM5 4h5v1h-5zM11 4h3v1h-3zM1 5h13v1h-13zM1 6h13v1h-13zM1 7h2v1h-2zM4 7h3v1h-3zM8 7h3v1h-3zM12 7h2v1h-2zM1 8h13v1h-13z"/></svg>
+                <span class="bk-txt" aria-hidden="true">Senior Product Designer</span>
               </div>
             </div>
+          </li>
+          <li>
+            <div class="blinkie" role="img" aria-label="Design Systems">
+              <div class="bk bk--ds"><span class="bk-txt" aria-hidden="true">Design Systems</span></div>
+            </div>
+          </li>
+          <li>
+            <div class="blinkie" role="img" aria-label="Accesibilidad">
+              <div class="bk bk--a11y">
+                <span class="bk-txt" aria-hidden="true">Accesibilidad</span>
+                <svg viewBox="0 0 20 21" aria-hidden="true">
+                  <path fill="currentColor" d="M8 0h2v1h-2zM7 1h4v1h-4zM7 2h4v1h-4zM8 3h2v1h-2zM8 5h2v1h-2zM8 6h6v1h-6zM8 7h6v1h-6zM8 8h2v1h-2zM8 9h8v1h-8zM8 10h8v1h-8zM14 11h2v1h-2zM14 12h2v1h-2zM14 13h2v1h-2zM14 14h2v1h-2zM14 15h6v1h-6zM14 16h6v1h-6zM6 8h2v1h-2zM4 9h4v1h-4zM3 10h3v1h-3zM3 11h2v1h-2zM2 12h2v1h-2zM2 13h2v1h-2zM2 14h1v1h-1zM13 14h1v1h-1zM2 15h2v1h-2zM12 15h2v1h-2zM2 16h2v1h-2zM12 16h2v1h-2zM3 17h2v1h-2zM11 17h2v1h-2zM3 18h3v1h-3zM10 18h3v1h-3zM4 19h8v1h-8zM6 20h4v1h-4z"/>
+                  <path class="rayo-a" d="M7 11h2v1h-2zM7 12h2v1h-2zM7 13h2v1h-2zM5 14h6v1h-6zM7 15h2v1h-2zM7 16h2v1h-2zM7 17h2v1h-2z"/>
+                  <path class="rayo-b" d="M5 12h2v1h-2zM9 12h2v1h-2zM6 13h1v1h-1zM9 13h1v1h-1zM6 15h1v1h-1zM9 15h1v1h-1zM5 16h2v1h-2zM9 16h2v1h-2z"/>
+                </svg>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <p class="playlist"><img src="assets/playlist.gif" alt="" width="20" height="20"><a href="#">Escuchar playlist</a></p>
           </div>
-        </div>
-
-        <div class="col">
-          <section class="window window--clear" aria-labelledby="proyectos">
-            <h2 class="window__bar" id="proyectos"><span aria-hidden="true">†«---·( xX_Miiz_PrOyecToSz_Xx )·---»†</span><span class="visually-hidden">Mis proyectos</span></h2>
-            <div class="window__body">
-              <article class="project" style="display:grid;gap:var(--space-3)">
-                <h3>Netia</h3>
-                <p><strong>¿Y si tu precio te estuviera haciendo trabajar gratis?</strong></p>
-                <p>Las microemprendedoras incluyen siempre menos de 4 de las 12 cosas que cuesta hacer un producto, y la mayoría vendió sin ganancia sin darse cuenta. Netia les calcula el precio completo para que su negocio pueda crecer.</p>
-                <div class="project__shot" role="img" aria-label="Captura de la app Netia (pendiente)">Imagen</div>
-                <ul class="project__links">
-                  <li><a href="#">Leer case study</a></li>
-                  <li><a href="#">Abrir app live</a></li>
-                </ul>
-              </article>
-            </div>
-          </section>
-        </div>
-      </div>
-
-      <div class="columns columns--plain">
-        <div class="col">
           <section class="window window--outlined" aria-labelledby="sobre-mi">
-            <h2 class="window__bar" id="sobre-mi"><span aria-hidden="true">sOoBRee_Mii</span><span class="visually-hidden">Sobre mí</span></h2>
+            <h2 class="window__bar" id="sobre-mi"><span aria-hidden="true">x•┈*⋯SOBRE_MI⋯*┈•x</span><span class="visually-hidden">Sobre mí</span></h2>
             <div class="window__body">
               <div class="about-item">
                 <h3 class="about-item__label">Mi estilo</h3>
@@ -132,12 +87,13 @@
               </div>
               <p class="divider" aria-hidden="true">｡ ₊°༺❤︎༻°₊ ｡</p>
               <div class="about-item">
-                <h3 class="about-item__label">Mi historia</h3>
+                <h3 class="about-item__label">Mi experiencia</h3>
                 <div class="about-item__text">
                   <p>Empecé en el diseño gráfico, que es mi base, y luego me especialicé en UX/UI, donde llevo más de 7 años.</p>
-                  <p>He trabajado como product designer y design system specialist, así que diseño productos pensando en cómo escalan; en salud, fintech y comercio mayorista, en apps B2B y B2C; y en inglés con equipos de desarrollo en el extranjero.</p>
-                  <p>Mi especialidad es la accesibilidad y la llevo a todo lo que diseño.</p>
-                  <p>Con la IA, mi mundo se expandió y mis soluciones vienen con esteroides. Sé qué delegar y dónde poner mi foco: donde siempre estuvo, en las decisiones de experiencia.</p>
+                  <p>&gt; He sido product designer y también design system specialist, así que diseño productos pensando en cómo escalan.</p>
+                  <p>&gt; He estado en salud, fintech y comercio mayorista, en apps B2B y B2C.</p>
+                  <p>&gt; Me tocó hablar en inglés con equipos de desarrollo en el extranjero.</p>
+                  <p>Con la IA, mi mundo se expandió y mis soluciones vienen con esteroides. Sé qué delegarle y dónde poner mi foco: donde siempre estuvo, en las decisiones de experiencia.</p>
                 </div>
               </div>
               <p class="divider" aria-hidden="true">｡ ₊°༺❤︎༻°₊ ｡</p>
@@ -153,11 +109,40 @@
         </div>
 
         <div class="col">
-          <section class="window" aria-labelledby="random">
-            <h2 class="window__bar" id="random"><span aria-hidden="true">cOzAs_rAnDoM</span><span class="visually-hidden">Cosas random</span></h2>
+          <section class="window window--orange window--projects" aria-labelledby="proyectos">
+            <h2 class="window__bar" id="proyectos"><span aria-hidden="true">x•┈*⋯mis_proyectos⋯*┈•x</span><span class="visually-hidden">Mis proyectos</span></h2>
             <div class="window__body">
-              <h3>Papelería creativa</h3>
-              <h3>Ilustraciones</h3>
+              <article class="project">
+                <h3>Netia</h3>
+                <div class="project__shot" role="img" aria-label="Captura de la app Netia (pendiente)"></div>
+                <p class="project__lead">Se puede vender y aún así no ganar nada. Diseñé una herramienta para evitarlo.</p>
+                <p class="project__text"><strong>9 de cada 10 microemprendedores de productos hechos a mano</strong> que encuesté vendieron sin tener ganancia, la razón es que no incluyen todos los costos en sus precios. Netia les calcula el precio para que sus negocios les generen su suelo y ganancia para re-invertir.</p>
+                <ul class="icon-links">
+                  <li><img src="assets/icon-case.gif" alt="" width="20" height="20"><a href="#">Leer case study</a></li>
+                  <li><img src="assets/icon-live.gif" alt="" width="20" height="20"><a href="#">Abrir plataforma live</a></li>
+                </ul>
+              </article>
+              <img class="project__sep" src="assets/flores.gif" alt="" width="796" height="28" loading="lazy">
+              <article class="project">
+                <h3>Proyecto 2</h3>
+                <div class="project__shot" role="img" aria-label="Captura del proyecto 2 (pendiente)"></div>
+                <p class="project__lead">Título llamativo</p>
+                <p class="project__text">Descripción concisa con problema, para quién, impacto al resolver.</p>
+                <ul class="icon-links">
+                  <li><img src="assets/icon-case.gif" alt="" width="20" height="20"><a href="#">Leer case study</a></li>
+                  <li><img src="assets/icon-live.gif" alt="" width="20" height="20"><a href="#">Abrir plataforma live</a></li>
+                </ul>
+              </article>
+            </div>
+          </section>
+
+          <section class="window window--orange window--random" aria-labelledby="random">
+            <h2 class="window__bar" id="random"><span aria-hidden="true">x•┈*⋯COSitas_RANDOM⋯*┈•x</span><span class="visually-hidden">Cositas random</span></h2>
+            <div class="window__body">
+              <ul class="icon-links icon-links--thick">
+                <li><img src="assets/icon-ilustraciones.gif" alt="" width="20" height="20"><a href="#">Mostrar ilustraciones</a></li>
+                <li><img src="assets/icon-papeleria.gif" alt="" width="20" height="20"><a href="#">Mostrar papelería creativa</a></li>
+              </ul>
             </div>
           </section>
         </div>
@@ -190,7 +175,12 @@
         </div>
       </section>
     </div>
-    <p class="legal">© 2026 Ana Silva · Product Designer. Todos los derechos reservados.</p>
+    <div class="legal">
+      <a class="legal__guestbook" href="#"><img src="assets/guestbook.gif" alt="Firma mi libro de visitas" width="88" height="31"></a>
+      <p>© 2026 Ana Silva · Product Designer. Todos los derechos reservados.</p>
+      <p class="legal__ornament" aria-hidden="true">︵︵︵ ๑ ♡ ๑ ︵︵︵</p>
+      <a class="legal__credits" href="#">Créditos</a>
+    </div>
   </footer>
 
   <script src="js/smoke/glitter-smoke.js"></script>
