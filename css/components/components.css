@@ -86,13 +86,16 @@
   /* contacto */
   .site-footer { display: grid; gap: var(--space-4); }
   .contact {
-    display: grid; gap: var(--space-4); align-items: center;
-    background: var(--purple); border-radius: 8px; padding: var(--space-4);
+    display: grid; gap: 0.75rem; align-items: center;
+    background: linear-gradient(88.5deg, var(--purple) 1.5%, var(--purple-deep) 99.7%);
+    border-radius: 8px; padding: var(--space-4);
     margin-inline: auto; inline-size: min(100%, 55rem);
   }
-  @media (min-width: 40rem) { .contact { grid-template-columns: 13rem 1fr; } }
-  .contact__photo { inline-size: 100%; max-inline-size: 13rem; block-size: auto; aspect-ratio: 207 / 201; object-fit: cover; }
-  .contact__body { display: grid; gap: var(--space-3); }
+  @media (min-width: 40rem) { .contact { grid-template-columns: 11rem 1fr; } }
+  .contact__photo { inline-size: 100%; max-inline-size: 11rem; block-size: auto; aspect-ratio: 176 / 158; object-fit: cover; border-radius: 2px; }
+  .contact__body { display: grid; gap: 0.75rem; }
+  .contact h2 { font-family: var(--font-hero); font-weight: 400; font-size: 1.625rem; line-height: 1.23; }
+  .contact__body p { font-weight: 400; }
   .contact__links { display: flex; flex-wrap: wrap; gap: var(--space-3); list-style: none; padding: 0; }
   .legal {
     display: grid; justify-items: center; gap: var(--space-3);
