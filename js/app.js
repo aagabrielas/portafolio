@@ -28,12 +28,34 @@
     if (g.img.complete) capture(); else g.img.addEventListener('load', capture, { once: true });
   });
 
+  // Los videos decorativos (banner Netia, footer, créditos) se pausan igual que los GIF.
+  // Los marcados con data-lazy (créditos, bajo el fold) no cargan ni arrancan hasta acercarse a la pantalla.
+  const videos = [...document.querySelectorAll('video')];
+  const play = (v) => v.play().catch(() => { /* el navegador bloqueó el autoplay */ });
+  const freezeVideos = (freeze) => videos.forEach((v) => {
+    if (freeze) v.pause();
+    else if (!v.hasAttribute('data-lazy') || v.dataset.visible) play(v);
+  });
+  const lazyVideos = videos.filter((v) => v.hasAttribute('data-lazy'));
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => entries.forEach((e) => {
+      if (!e.isIntersecting) return;
+      io.unobserve(e.target);
+      e.target.dataset.visible = '1';
+      if (!root.classList.contains('pausar-animaciones') && !reduced.matches) play(e.target);
+    }), { rootMargin: '200px' });
+    lazyVideos.forEach((v) => io.observe(v));
+  } else {
+    lazyVideos.forEach((v) => { v.dataset.visible = '1'; });
+  }
+
   let smoke = null;
   const apply = (paused) => {
     root.classList.toggle('pausar-animaciones', paused);
     pauseBtn.setAttribute('aria-pressed', String(paused));
     if (smoke) smoke.setPaused(paused);
     freezeGifs(paused || reduced.matches);
+    freezeVideos(paused || reduced.matches);
   };
   reduced.addEventListener('change', () => apply(root.classList.contains('pausar-animaciones')));
 

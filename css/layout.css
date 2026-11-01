@@ -26,17 +26,24 @@
   main { display: grid; gap: var(--space-3); padding-bottom: var(--space-5); }
 
   .columns {
-    display: grid; gap: var(--space-4); align-items: start;
+    display: grid; gap: 1.25rem; align-items: start;
+    inline-size: min(100%, var(--columns-width)); margin-inline: auto;
   }
-  .col { display: grid; gap: 1.75rem; align-content: start; }
-  /* el panel oscuro solo cubre el avatar y los blinkies */
-  .avatar-card {
-    display: grid; gap: var(--space-4);
-    background: rgb(0 0 0 / 0.5);
-    padding: var(--space-4);
-    border-radius: var(--radius);
+  .col { display: grid; gap: 1.25rem; align-content: start; }
+
+  /* móvil: una sola columna. Los hijos de .col se reparten en el grid con un orden propio:
+     avatar → proyecto → sobre mí → otras cositas → agregados */
+  @media (max-width: 55.99rem) {
+    .col { display: contents; }
+    .avatar-card { order: 1; }
+    .window--projects { order: 2; }
+    .window--outlined { order: 3; }
+    .col--side .sep:nth-of-type(1) { order: 4; }
+    .window--dark { order: 5; }
+    .col--side .sep:nth-of-type(2) { order: 6; }
+    .extras { order: 7; }
   }
   @media (min-width: 56rem) {
-    .columns { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); }
+    .columns { grid-template-columns: minmax(0, 349fr) minmax(0, 609fr); gap: 1rem; }
   }
 }

@@ -2,13 +2,15 @@
 
 Portafolio de Ana Silva, Senior Product Designer (diseño de producto, design systems y accesibilidad).
 
-Sitio estático en HTML, CSS y JavaScript, sin dependencias ni paso de build.
+Sitio estático en HTML, CSS y JavaScript, sin dependencias ni paso de build. El diseño de referencia está en Paper (archivo "Quiet unicorn", página "Final MVP").
 
 ## Detalles
 
 - **Accesibilidad primero:** enlace de salto al contenido, foco visible, `aria-label` en los elementos decorativos y respeto por `prefers-reduced-motion`.
-- **Botón para pausar las animaciones** (humo de fondo, GIF, blinkies y efectos), con la preferencia guardada.
-- **Título con cambio de peso al hover**, letra por letra, en Verdana (`js/weight-title.js`).
+- **Botón para pausar las animaciones** (humo de fondo, GIF, videos con poster al pausar, cartel "en construcción" y efectos), con la preferencia guardada.
+- **Título con cambio de peso al hover**, letra por letra, en Silkscreen (`js/weight-title.js`).
+- **Banner de Netia y fondo/foto del footer** como `<video>` (webm + mp4, con poster) que se pausan junto con el resto.
+- **Borde ondulado** en la card del avatar (`.card-scallop`, tile SVG en `assets/scallop-border-white.svg`).
 - **CSS con `@layer` y design tokens** (`css/tokens.css`).
 
 ## Estructura
@@ -16,9 +18,17 @@ Sitio estático en HTML, CSS y JavaScript, sin dependencias ni paso de build.
 ```
 index.html
 css/   tokens, base, layout y componentes
-js/    app, efectos de botón y título, humo (WebGL) y personaje
-assets/
+js/    app (pausa, GIF y videos), contact (copiar email), efectos de título y links, humo (WebGL) y personaje
+assets/        imágenes, GIF y fuentes (assets/fonts)
+assets/video/  videos del banner Netia y del footer
 ```
+
+## Pendiente
+
+- **Contador de visitas:** por ahora es el PNG estático de Paper (`assets/contador.png`, cifra de ejemplo, no una cuenta real). Falta elegir cómo guardar la cuenta (servicio de terceros o backend propio).
+- Links `href="#"`: Escuchar playlist, Accesibilidad, Papelería creativa, Ilustraciones, Créditos, case study y plataforma live.
+- Ruta `en/` (versión en inglés) todavía no existe.
+- La fuente Visitor TT1 BRK (`assets/fonts`) viene del equipo de diseño: confirmar su licencia antes de publicar.
 
 ## Ver en local
 

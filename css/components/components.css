@@ -1,83 +1,187 @@
 @layer components {
-  .wordmark { font-size: 1.5rem; letter-spacing: 0.04em; }
-
   .btn-link {
     background: none; border: 0; padding: 0; cursor: pointer;
   }
 
   /* text links: subrayados en reposo; el hover es un scramble naranja (js/text-scramble.js) */
-  a:not(.btn-pixel):not(.skip-link),
+  a:not(.win-btn):not(.skip-link),
   .btn-link { text-decoration: underline; text-underline-offset: 0.2em; }
   /* con movimiento reducido o pausa no hay scramble: queda el cambio de color */
-  html.pausar-animaciones :is(a:not(.btn-pixel):not(.skip-link), .btn-link):is(:hover, :focus-visible) { color: var(--orange); }
+  html.pausar-animaciones :is(a:not(.win-btn):not(.skip-link), .btn-link):is(:hover, :focus-visible) { color: var(--orange); }
   @media (prefers-reduced-motion: reduce) {
-    :is(a:not(.btn-pixel):not(.skip-link), .btn-link):is(:hover, :focus-visible) { color: var(--orange); }
+    :is(a:not(.win-btn):not(.skip-link), .btn-link):is(:hover, :focus-visible) { color: var(--orange); }
+  }
+
+  /* cabecera: cartel "en construcción" (rayas de precaución animadas, parpadeo del texto) */
+  .construction {
+    display: flex; flex-direction: column; inline-size: 16.375rem;
+    background: #fcff00; border-radius: 2px; overflow: hidden; image-rendering: pixelated;
+  }
+  .construction::before, .construction::after {
+    content: ""; block-size: 0.5rem; background-color: #fcff00;
+    background-image: linear-gradient(135deg, #1a1400 25%, transparent 25% 50%, #1a1400 50% 75%, transparent 75%);
+    background-size: 0.5rem 0.5rem;
+    animation: ec-stripes 1.2s steps(8) infinite;
+  }
+  .construction::after { animation-direction: reverse; }
+  .construction__text {
+    display: grid; place-items: center; block-size: 1.75rem;
+    font-family: var(--font-hero); font-weight: 700; font-size: 1.125rem; line-height: 1;
+    letter-spacing: 1px; white-space: nowrap; color: #1a1400;
+    animation: ec-blink 1.6s steps(1) infinite;
+  }
+  @keyframes ec-stripes { from { background-position: 0 0; } to { background-position: 1rem 0; } }
+  @keyframes ec-blink { 0%, 70% { opacity: 1; } 71%, 100% { opacity: 0.35; } }
+  @media (prefers-reduced-motion: reduce) {
+    .construction::before, .construction::after, .construction__text { animation: none; }
   }
 
   /* hero: título centrado entre dos adornos, directo sobre el fondo */
   .hero { display: grid; justify-items: center; gap: var(--space-4); padding-block: var(--space-4); }
-  .hero__title { max-inline-size: 60rem; text-align: center; font-size: clamp(1.75rem, 1rem + 2.5vw, 2.5rem); line-height: 1.2; }
+  .hero__title {
+    max-inline-size: 59.9375rem; text-align: center; font-family: var(--font-hero); font-weight: 400;
+    font-size: clamp(1.75rem, 1rem + 2.5vw, 2.5rem); line-height: 1.2;
+  }
+  .hero .divider { font-size: 1.5625rem; line-height: 1.2; font-weight: 700; }
   /* hover: las letras cercanas al cursor cambian de peso (ver js/weight-title.js) */
-  .hero__title { font-family: var(--font-hero); font-weight: 700; }
-  /* los adornos del hero comparten la tipografía; los glifos que Silkscreen no trae caen a Verdana */
-  .hero .divider { font-family: var(--font-hero), var(--font-body); }
   .wt-line { display: block; white-space: nowrap; }
   .wt-word { display: inline-block; white-space: nowrap; }
   .wt-char { display: inline-block; }
 
-  /* blinkies */
-  .blinkies { list-style: none; padding: 0; display: grid; gap: 0.3125rem; inline-size: min(100%, 16rem); margin-inline: auto; }
-  .playlist { display: flex; align-items: center; justify-content: center; gap: 0.25rem; font-size: var(--text-small); }
-  .playlist img { inline-size: 1.25rem; block-size: 1.25rem; image-rendering: pixelated; }
+  .divider { text-align: center; line-height: 1.2; color: var(--ink); }
 
   /* avatar */
-  .avatar { display: grid; justify-items: center; gap: var(--space-3); text-align: center; }
-  .avatar__name { font-size: 1.25rem; line-height: 1.2; font-weight: 700; }
+  .avatar-card {
+    display: grid; justify-items: center; gap: var(--space-3);
+    background: var(--glass); padding: 0 0.5rem 1.125rem;   /* menos relleno: el borde ya aporta 8 px */
+  }
+  /* borde ondulado: solo el trazo blanco (tile SVG 24×24, 9-slice 8/8/8). El fondo llega hasta el borde
+     y el radio chico recorta las esquinas del fondo para que no asomen fuera de la onda.
+     Para otro color: duplicar el SVG con otro stroke y cambiar border-image-source. */
+  .card-scallop {
+    border: 8px solid transparent;
+    border-image: url("../../assets/scallop-border-white.svg") 8 / 1 / 0 round;
+    background-clip: border-box;
+    border-radius: 8px;
+  }
+  .avatar { display: grid; justify-items: center; gap: 0.5rem; text-align: center; inline-size: 100%; }
+  .avatar__name { font-family: var(--font-hero); font-size: 1.125rem; line-height: 1.2; font-weight: 700; }
   /* ancho completo de la columna: el personaje camina dentro de él */
-  .avatar__frame { display: grid; place-items: center; inline-size: 100%; min-block-size: 18rem; align-items: end; }
-  .avatar figcaption { font-size: 1.125rem; font-weight: 700; }
+  .avatar__frame { display: grid; place-items: center; inline-size: 100%; min-block-size: 16.8125rem; align-items: end; padding-block-start: var(--space-3); }
+  .avatar figcaption { font-size: 0.8125rem; line-height: 1.25; }
+  .playlist { display: flex; align-items: center; justify-content: center; gap: 0.25rem; font-size: var(--text-small); }
+  .playlist img, .credits img { inline-size: 1.25rem; block-size: 1.25rem; image-rendering: pixelated; }
+  .playlist a, .credits a, .icon-links--thick a { text-decoration-thickness: 2px; text-underline-offset: 3px; }
 
-  .divider { text-align: center; font-size: 1.5rem; font-weight: 700; line-height: 1.2; color: var(--ink); }
+  /* stamps del perfil */
+  .stamps { list-style: none; padding: 0; display: grid; justify-items: center; gap: 0.5rem; }
+  .stamps__row { display: flex; align-items: flex-start; justify-content: center; gap: 0.25rem; }
+  .stamps img { image-rendering: pixelated; }
+  .stamp-a11y { position: relative; display: block; inline-size: 6.375rem; block-size: 3.5rem; }
+  .stamp-a11y img { position: absolute; inset: 0 auto auto 0; inline-size: 101px; block-size: 56px; }
+  .stamp-a11y__text {
+    position: absolute; inset: auto 0 4px; display: grid; white-space: nowrap; text-align: center;
+    font-family: var(--font-tiny); font-size: 12px; line-height: 13px; color: #000;
+  }
+  /* "YO❤" queda a la izquierda del monitor; "ACCESIBILIDAD" centrado en la base */
+  .stamp-a11y__text span:first-child { text-align: left; padding-inline-start: 6px; }
+
+  .sep { justify-self: center; image-rendering: pixelated; max-inline-size: 100%; block-size: auto; }
+
+  /* extras: contador, badges, créditos */
+  .extras {
+    display: grid; justify-items: center; gap: 0.75rem; padding: var(--space-4) var(--space-3);
+    background: var(--glass); border-radius: var(--radius);
+  }
+  .ornament { font-size: 0.8125rem; line-height: 1; text-align: center; white-space: nowrap; }
+  /* contador: PNG de Paper recortado 111×26 (la imagen se muestra a tamaño original) */
+  .counter {
+    inline-size: 111px; block-size: 26px; border-radius: 2px; image-rendering: pixelated;
+    background: url("../../assets/contador.png") -44px -38px / 208px 88px no-repeat;
+  }
+  .badges { list-style: none; padding: 0; display: grid; gap: 0.75rem; }
+  /* cada crédito tiene su color de fondo y de nombre; el contorno repite el fondo */
+  .badge {
+    --badge-bg: #9f9f9f; --badge-who: var(--rust);
+    display: flex; align-items: center; gap: 0.5rem; inline-size: 186px; box-sizing: border-box;
+    background: var(--badge-bg); border: 2px solid #000; outline: 2px solid var(--badge-bg);
+  }
+  .badge--disenado { --badge-bg: #cacaff; --badge-who: #6162dd; --mw: 48px; --mh: 49px; }
+  .badge--escrito { --badge-bg: #afd0a0; --badge-who: #059b15; --mw: 49px; --mh: 50px; }
+  .badge--codeado { --badge-bg: #9f9f9f; --badge-who: var(--rust); --mw: 49px; --mh: 49px; }
+  .credito { position: relative; flex: none; inline-size: var(--mw); block-size: var(--mh); }
+  .credito video, .credito__still { position: absolute; inset: 0; inline-size: 100%; block-size: 100%; object-fit: cover; }
+  /* al pausar (o con movimiento reducido) se muestra el poster encima del video */
+  .credito__still { display: none; }
+  html.pausar-animaciones .credito__still { display: block; }
+  @media (prefers-reduced-motion: reduce) { .credito__still { display: block; } }
+  .badge__text { display: grid; inline-size: 96px; white-space: nowrap; }
+  .badge__label { font-family: var(--font-tiny); font-size: 15px; line-height: 16px; color: #000; }
+  .badge__who {
+    font-family: var(--font-hero); font-weight: 700; font-size: 12px; line-height: 16px; color: var(--badge-who);
+    -webkit-text-stroke: 3px #fff; paint-order: stroke fill;
+  }
+  .credits { display: flex; align-items: flex-start; gap: 0.25rem; font-size: var(--text-small); line-height: 1.3; }
 
   /* ventanas */
-  .window { background: var(--bg); border-radius: 8px; overflow: hidden; }
+  .window { background: var(--card); color: var(--card-ink); border-radius: var(--radius); overflow: hidden; --orange: var(--rust); }
+  .window--dark { background: var(--glass); color: var(--ink); --orange: #f26b1d; }
   .window__bar {
-    background: var(--purple); font-family: var(--font-pixel); font-size: 1.125rem;
-    padding: 0.75rem; text-align: center;
+    background: var(--purple); color: #fff; font-family: var(--font-hero); font-weight: 400;
+    font-size: 1.125rem; line-height: 1.22; padding: 0.75rem; text-align: left;
   }
-  .window__body { padding: var(--space-4); display: grid; gap: var(--space-3); }
-  /* subtítulos de las tarjetas: Pixelify Sans (el resto del sitio es Verdana) */
-  .window__bar, .window h3 { font-family: var(--font-pixel); font-weight: 700; }
-  .window--outlined .window__body { padding: 1.375rem 1.125rem; gap: 0.875rem; justify-items: stretch; }
-  .window--outlined .divider { justify-self: center; font-size: 1.5625rem; line-height: 1.2; letter-spacing: 0; color: var(--purple); }
-  /* "sobre mí": barra y etiquetas en Silkscreen regular */
-  .window--outlined .window__bar { font-family: var(--font-hero); font-weight: 400; }
+  .window__body { padding: var(--space-4); display: grid; gap: 0.75rem; justify-items: stretch; }
+  .window--dark .window__body { padding: var(--space-4); }
+  .window--projects .window__body { padding: 0; gap: 0; }
 
-  .about-item { display: grid; gap: var(--space-2); }
-  .about-item { grid-template-columns: 3.5625rem 1fr; gap: 0.5rem; }
+  .project { display: grid; gap: 0.75rem; padding: 1.625rem var(--space-4); justify-items: stretch; }
+  .project__lead { font-size: 1.125rem; font-weight: 700; letter-spacing: 0.03em; line-height: 1.22; }
+  .project__text { font-size: var(--text-small); letter-spacing: 0.01em; line-height: 1.3; }
+
+  /* "sobre mí" */
+  .window--outlined .window__body { padding: 1.375rem 1.125rem; gap: 1.25rem; }
+  .window--outlined .divider { font-size: 1rem; line-height: 1.25; color: var(--purple); overflow-wrap: anywhere; }
+  .about-item { display: grid; grid-template-columns: 3.5625rem 1fr; gap: 0.5rem; }
   /* etiqueta vertical, se lee de abajo hacia arriba */
-  .window .about-item__label {
-    display: grid; place-items: center; background: var(--purple); border-radius: 4px;
+  .about-item__label {
+    display: grid; place-items: center; background: var(--label-bg); color: var(--label-ink); border-radius: 4px;
     writing-mode: vertical-rl; transform: rotate(180deg);
     font-family: var(--font-hero); font-size: 0.875rem; line-height: 1.3; font-weight: 400; padding: var(--space-2);
   }
-  .about-item__text { display: grid; gap: 1rem; font-size: 0.8125rem; line-height: 1rem; }
-  .about-item:first-of-type .about-item__text p:first-child { font-weight: 700; }
+  .about-item__text { display: grid; gap: 1.125rem; font-size: 0.875rem; line-height: 1.3; align-content: start; }
 
-  /* "mis proyectos" y "cositas random": barra naranja oscuro, título en Silkscreen */
-  .window--orange .window__bar { background: var(--rust); font-family: var(--font-hero); font-weight: 400; text-align: left; }
-  .window--random { background: rgb(0 0 0 / 0.5); }
-  .window--orange .window__body { padding: var(--space-4); gap: 0.75rem; justify-items: stretch; }
-  .window--projects .window__body { gap: 0; padding: 0; }
-  .project { display: grid; gap: 0.75rem; padding: var(--space-4); justify-items: stretch; }
-  .window .project h3 { font-family: var(--font-hero); font-weight: 700; font-size: clamp(1.75rem, 1.2rem + 2.4vw, 2.5rem); line-height: 1.2; }
-  .project__shot { aspect-ratio: 561 / 314; background: #ddd; }
-  .project__lead { font-size: 1.125rem; font-weight: 700; letter-spacing: 0.05em; line-height: 1.22; }
-  .project__text { font-size: var(--text-small); letter-spacing: 0.01em; line-height: 1.3; }
-  .project__sep { justify-self: center; max-inline-size: calc(100% - 2 * var(--space-4)); block-size: auto; aspect-ratio: 538 / 18; object-fit: cover; }
+  /* banner Netia: unidades cqw, escala con el ancho de la tarjeta */
+  .netia { container-type: inline-size; }
+  .netia-banner {
+    display: flex; align-items: center; gap: 4cqw; inline-size: 100%; aspect-ratio: 3.9 / 1;
+    background: #000; color: #fff; padding: 0.5cqw; box-sizing: border-box;
+  }
+  .netia-banner__brand {
+    position: relative; block-size: 100%; aspect-ratio: 1.1 / 1; flex: none; overflow: hidden;
+    background: #0b2a1e; display: flex; align-items: center; justify-content: center;
+  }
+  .netia-banner__brand video {
+    position: absolute; inset: 0; inline-size: 100%; block-size: 100%; object-fit: cover; object-position: 13% 50%;
+  }
+  .netia-banner__logo { position: relative; display: flex; flex-direction: column; align-items: center; gap: 0.8cqw; }
+  .netia-banner__logo img { inline-size: 17cqw; block-size: auto; }
+  .netia-banner__logo h3 { font-family: var(--font-body); font-weight: 700; font-size: 6cqw; line-height: 1; }
+  .netia-banner__copy { display: grid; gap: 0.6cqw; min-inline-size: 0; }
+  .netia-banner__kicker { font-weight: 700; font-size: 4cqw; line-height: 1.1; }
+  .netia-banner__title {
+    font-weight: 700; font-size: 8.6cqw; line-height: 1.05; letter-spacing: 0.06em;
+    color: transparent; -webkit-text-stroke: 0.2cqw #fff; animation: netia-fill 2.4s step-end infinite;
+  }
+  .netia-banner__tagline { font-style: italic; font-size: 2.6cqw; line-height: 1.1; }
+  @keyframes netia-fill { 0%, 49.99% { color: transparent; } 50%, 100% { color: #fff; } }
+  @media (prefers-reduced-motion: reduce) {
+    .netia-banner__title { animation: none; color: #fff; }
+  }
+  html.pausar-animaciones .netia-banner__title { color: #fff; }
 
   /* enlaces con icono pixel */
-  .icon-links { display: grid; gap: 0.75rem; list-style: none; padding: 0; justify-items: start; }
+  .icon-links { display: grid; gap: 0.75rem; list-style: none; padding: 0; justify-items: start; grid-auto-flow: row; }
+  .project .icon-links { grid-auto-flow: column; justify-content: start; gap: var(--space-4); }
   .icon-links li { display: flex; align-items: flex-start; gap: 0.25rem; font-size: var(--text-small); line-height: 1.3; }
   .icon-links img { flex: none; inline-size: 1.25rem; block-size: 1.25rem; image-rendering: pixelated; }
   .icon-links a { text-decoration-thickness: 1px; }
@@ -86,25 +190,28 @@
   /* contacto */
   .site-footer { display: grid; gap: var(--space-4); }
   .contact {
+    position: relative; isolation: isolate; overflow: hidden;
     display: grid; gap: 0.75rem; align-items: center;
-    background: linear-gradient(88.5deg, var(--purple) 1.5%, var(--purple-deep) 99.7%);
-    border-radius: 8px; padding: var(--space-4);
-    margin-inline: auto; inline-size: min(100%, 55rem);
+    background: var(--purple-deep); border-radius: var(--radius); padding: var(--space-4);
+    margin-inline: auto; inline-size: min(100%, 49.4375rem);
   }
   @media (min-width: 40rem) { .contact { grid-template-columns: 11rem 1fr; } }
+  /* las estrellas (fondo oscuro) se mezclan con el morado en "darken" */
+  .contact__stars {
+    position: absolute; inset: 0; z-index: -1; inline-size: 100%; block-size: 100%;
+    object-fit: cover; mix-blend-mode: darken;
+  }
   .contact__photo { inline-size: 100%; max-inline-size: 11rem; block-size: auto; aspect-ratio: 176 / 158; object-fit: cover; border-radius: 2px; }
-  .contact__body { display: grid; gap: 0.75rem; }
-  .contact h2 { font-family: var(--font-hero); font-weight: 400; font-size: 1.625rem; line-height: 1.23; }
-  .contact__body p { font-weight: 400; }
-  .contact__links { display: flex; flex-wrap: wrap; gap: var(--space-3); list-style: none; padding: 0; }
+  .contact__body { display: grid; gap: 0.75rem; justify-items: start; }
+  .contact h2 { font-family: var(--font-hero); font-weight: 400; font-size: 2.125rem; line-height: 1.24; }
+  .contact__body p { font-size: 1.125rem; line-height: 1.22; font-weight: 400; }
+  .contact__links { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem; list-style: none; padding: 0; }
   .legal {
     display: grid; justify-items: center; gap: var(--space-3);
-    background: var(--bg); border-radius: 8px; padding: var(--space-4) var(--gutter);
-    text-align: center; margin-block-start: var(--space-3);
+    background: var(--bg); padding: var(--space-4) var(--gutter);
+    text-align: center; font-size: 0.75rem; line-height: 1.33;
   }
-  .legal__guestbook { display: block; line-height: 0; }
-  .legal__guestbook img { image-rendering: pixelated; }
-  .legal__credits { font-size: var(--text-small); line-height: 1.3; text-decoration-thickness: 2px; text-underline-offset: 3px; }
+  .legal__rabbit { white-space: nowrap; }
 
   /* pausa global de animaciones */
   .pausar-animaciones *, .pausar-animaciones *::before, .pausar-animaciones *::after {

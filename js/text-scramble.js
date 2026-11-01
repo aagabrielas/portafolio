@@ -2,7 +2,7 @@
    resuelve de izquierda a derecha hasta volver a la palabra. Respeta la pausa y
    prefers-reduced-motion. */
 (() => {
-  const SELECTOR = 'a:not(.btn-pixel):not(.skip-link), .btn-link';
+  const SELECTOR = 'a:not(.win-btn):not(.skip-link), .btn-link';
   const GLYPHS = '{}[]<>^/\\|*+=~#@%&?!;:0123456789';
   const TICK = 35;        // ms entre cambios de símbolo
   const SETTLE = 40;      // ms entre un grupo de letras resuelto y el siguiente

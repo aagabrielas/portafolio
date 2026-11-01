@@ -1,36 +1,40 @@
 @layer reset, tokens, base, layout, components;
 
+/* Visitor TT1 BRK: solo para los textos pequeños de stamps y badges (assets/fonts) */
+@font-face {
+  font-family: "Visitor TT1 BRK";
+  src: url("../assets/fonts/visitor-tt1-brk.ttf") format("truetype");
+  font-display: swap;
+}
+
 @layer tokens {
   :root {
     /* color */
     --bg: #000;
     --ink: #fff;
-    --ink-soft: #d9d9e0;
-    --surface: #0b0b0d;
-    --surface-2: #111114;
     --purple: #6757cb;
-    --purple-dark: #34286a;
-    --purple-light: #c9bdff;
-    --orange: #f26b1d;
-    --rust: #c93f00;
-    --purple-deep: #4b36a7;
-    --line: #fff;
+    --purple-deep: #4c3095;   /* fondo de la tarjeta ¡AJÁ! */
+    --orange: #f26b1d;        /* hover de los links sobre fondo oscuro */
+    --rust: #c93f00;          /* hover sobre tarjetas claras (contraste) */
     --focus: #ffd84a;
 
-    /* botones pixel (colores por confirmar) */
-    --btn-border: #fff;
-    --btn-bg: var(--purple-dark);
-    --btn-text: #fff;
-    --btn-fill: #fff;            /* color del barrido al hacer hover */
-    --btn-text-hover: var(--purple-dark);
+    /* tarjetas claras (proyecto, sobre mí) */
+    --card: #f2f1ff;
+    --card-ink: #150f35;
+    --label-bg: #cacaff;
+    --label-ink: #3e2395;
+    --glass: rgb(0 0 0 / 0.5);   /* paneles oscuros translúcidos */
+
+    /* botones estilo Windows */
+    --win-light: rgb(255 255 255 / 0.3);
+    --win-dark: rgb(0 0 0 / 0.3);
 
     /* tipografía */
-    --font-pixel: "Pixelify Sans", ui-monospace, monospace;
     --font-hero: "Silkscreen", ui-monospace, monospace;
+    --font-tiny: "Visitor TT1 BRK", ui-monospace, monospace;
     --font-body: Verdana, Geneva, "DejaVu Sans", sans-serif;
     --text-body: 1rem;
     --text-small: 0.875rem;
-    --text-title: clamp(1.5rem, 1.1rem + 1.6vw, 2.25rem);
 
     /* espacio */
     --space-1: 0.25rem;
@@ -38,11 +42,10 @@
     --space-3: 1rem;
     --space-4: 1.5rem;
     --space-5: 2.5rem;
-    --page-width: 66.5rem;
+    --page-width: 64.125rem;     /* 1026px: cabecera */
+    --columns-width: 60.875rem;  /* 974px: columnas 349 + 16 + 609 */
     --gutter: clamp(1rem, 4vw, 2rem);
 
-    /* bordes pixel */
-    --px: 4px;
-    --radius: 6px;
+    --radius: 2px;
   }
 }
