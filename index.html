@@ -81,6 +81,15 @@
             <div class="counter" role="img" aria-label="Contador de visitas">
               <!-- FC2 Contador - desde aquí -->
               <script language="javascript" type="text/javascript" src="https://counter1.fc2.com/counter.php?id=41258307&main=1"></script><noscript><img src="https://counter1.fc2.com/counter_img.php?id=41258307&main=1" alt=""></noscript>
+              <!-- FC2 inserta un enlace a su sitio alrededor de los dígitos: se deja solo la imagen -->
+              <script>
+                (function () {
+                  var box = document.currentScript.parentNode;
+                  function unwrap() { box.querySelectorAll('a').forEach(function (a) { a.replaceWith.apply(a, a.childNodes); }); }
+                  new MutationObserver(unwrap).observe(box, { childList: true, subtree: true });
+                  unwrap();
+                })();
+              </script>
               <!-- FC2 Contador - Hasta aquí -->
             </div>
             <p class="ornament" aria-hidden="true">︵︵ ๑ ⋆･ﾟ: ⋆･ﾟ: ☾ :･ﾟ⋆:･ﾟ⋆ ๑ ︵︵</p>
