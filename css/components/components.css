@@ -93,7 +93,9 @@
     display: grid; justify-items: center; gap: 0.75rem; padding: var(--space-4) var(--space-3);
     background: var(--glass); border-radius: var(--radius);
   }
-  .ornament { font-size: 0.8125rem; line-height: 1; text-align: center; white-space: nowrap; }
+  .ornament { font-size: 0.8125rem; line-height: 1; text-align: center; white-space: nowrap; color: var(--card-divider); }
+  /* adornos de texto: fuentes de respaldo con los glifos (tailandés, katakana, símbolos) */
+  .ornament, .divider { font-family: var(--font-body), "Noto Sans Thai", "Noto Sans JP", "Noto Sans Math", "Noto Sans Symbols 2", sans-serif; }
   /* contador: PNG de Paper recortado 111×26 (la imagen se muestra a tamaño original) */
   .counter {
     inline-size: 111px; block-size: 26px; border-radius: 2px; image-rendering: pixelated;
@@ -124,7 +126,7 @@
   .credits { display: flex; align-items: flex-start; gap: 0.25rem; font-size: var(--text-small); line-height: 1.3; }
 
   /* ventanas */
-  .window { background: var(--card); color: var(--card-ink); border-radius: var(--radius); overflow: hidden; --orange: var(--rust); }
+  .window { background: var(--card); color: var(--card-ink); border-radius: var(--radius); overflow: hidden; }
   .window--dark { background: var(--glass); color: var(--ink); --orange: #f26b1d; }
   .window__bar {
     background: var(--purple); color: #fff; font-family: var(--font-hero); font-weight: 400;
@@ -136,11 +138,11 @@
 
   .project { display: grid; gap: 0.75rem; padding: 1.625rem var(--space-4); justify-items: stretch; }
   .project__lead { font-size: 1.125rem; font-weight: 700; letter-spacing: 0.03em; line-height: 1.22; }
-  .project__text { font-size: var(--text-small); letter-spacing: 0.01em; line-height: 1.3; }
+  .project__text { color: var(--card-muted); font-size: var(--text-small); letter-spacing: 0.01em; line-height: 1.3; }
 
   /* "sobre mí" */
   .window--outlined .window__body { padding: 1.375rem 1.125rem; gap: 1.25rem; }
-  .window--outlined .divider { font-size: 1rem; line-height: 1.25; color: var(--purple); overflow-wrap: anywhere; }
+  .window--outlined .divider { font-size: 1rem; line-height: 1.25; color: var(--card-divider); overflow-wrap: anywhere; }
   .about-item { display: grid; grid-template-columns: 3.5625rem 1fr; gap: 0.5rem; }
   /* etiqueta vertical, se lee de abajo hacia arriba */
   .about-item__label {
@@ -154,11 +156,11 @@
   .netia { container-type: inline-size; }
   .netia-banner {
     display: flex; align-items: center; gap: 4cqw; inline-size: 100%; aspect-ratio: 3.9 / 1;
-    background: #000; color: #fff; padding: 0.5cqw; box-sizing: border-box;
+    background: var(--netia); color: #fff; box-sizing: border-box;
   }
   .netia-banner__brand {
     position: relative; block-size: 100%; aspect-ratio: 1.1 / 1; flex: none; overflow: hidden;
-    background: #0b2a1e; display: flex; align-items: center; justify-content: center;
+    background: var(--netia); display: flex; align-items: center; justify-content: center;
   }
   .netia-banner__brand video {
     position: absolute; inset: 0; inline-size: 100%; block-size: 100%; object-fit: cover; object-position: 13% 50%;

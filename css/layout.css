@@ -37,11 +37,12 @@
     .col { display: contents; }
     .avatar-card { order: 1; }
     .window--projects { order: 2; }
-    .window--outlined { order: 3; }
-    .col--side .sep:nth-of-type(1) { order: 4; }
-    .window--dark { order: 5; }
-    .col--side .sep:nth-of-type(2) { order: 6; }
-    .extras { order: 7; }
+    .col--main .sep { order: 3; }
+    .window--outlined { order: 4; }
+    .col--side .sep:nth-of-type(1) { order: 5; }
+    .window--dark { order: 6; }
+    .col--side .sep:nth-of-type(2) { order: 7; }
+    .extras { order: 8; }
   }
   @media (min-width: 56rem) {
     .columns { grid-template-columns: minmax(0, 349fr) minmax(0, 609fr); gap: 1rem; }

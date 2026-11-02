@@ -15,14 +15,17 @@
     --purple: #6757cb;
     --purple-deep: #4c3095;   /* fondo de la tarjeta ¡AJÁ! */
     --orange: #f26b1d;        /* hover de los links sobre fondo oscuro */
-    --rust: #c93f00;          /* hover sobre tarjetas claras (contraste) */
+    --rust: #c93f00;
     --focus: #ffd84a;
 
-    /* tarjetas claras (proyecto, sobre mí) */
-    --card: #f2f1ff;
-    --card-ink: #150f35;
+    /* tarjetas oscuras (proyecto, sobre mí) */
+    --card: #07011b;
+    --card-ink: #fff;
+    --card-muted: #d6d6d6;
     --label-bg: #cacaff;
-    --label-ink: #3e2395;
+    --label-ink: #07011b;
+    --card-divider: #b7b5ff;
+    --netia: #004035;             /* banner de Netia */
     --glass: rgb(0 0 0 / 0.5);   /* paneles oscuros translúcidos */
 
     /* botones estilo Windows */

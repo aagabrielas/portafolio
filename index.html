@@ -10,6 +10,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap">
+  <!-- glifos de los adornos de texto (︵ ๑ ⋆ ･ﾟ ☾ ☁): subconjunto mínimo para que no salgan cuadros en Mac/iOS -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Noto+Sans+Thai&family=Noto+Sans+Math&family=Noto+Sans+Symbols+2&display=swap&text=%EF%B8%B5%20%E0%B9%91%E2%8B%86%EF%BD%A5%EF%BE%9F%3A%E2%98%BE%E2%81%BA%E2%82%8A%E2%98%81%EF%B8%8E">
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/layout.css">
@@ -78,13 +80,13 @@
           <aside class="extras" aria-label="Extras del sitio">
             <!-- TODO: contador real (servicio de terceros por definir). Por ahora es el PNG estático de Paper (cifra de ejemplo, no una cuenta real). -->
             <p class="counter" role="img" aria-label="Contador de visitas"></p>
-            <p class="ornament" aria-hidden="true">︵︵ ๑ ✧･ﾟ: ✧･ﾟ: ☾ :･ﾟ✧:･ﾟ✧ ๑ ︵︵</p>
+            <p class="ornament" aria-hidden="true">︵︵ ๑ ⋆･ﾟ: ⋆･ﾟ: ☾ :･ﾟ⋆:･ﾟ⋆ ๑ ︵︵</p>
             <ul class="badges">
               <li class="badge badge--disenado"><span class="credito"><video data-lazy muted loop playsinline preload="none" poster="assets/video/credito-disenado-por-poster.webp" width="48" height="49" aria-hidden="true" tabindex="-1"><source src="assets/video/credito-disenado-por.webm" type="video/webm"><source src="assets/video/credito-disenado-por.mp4" type="video/mp4"></video><img class="credito__still" src="assets/video/credito-disenado-por-poster.webp" alt="" width="48" height="49"></span><span class="badge__text"><span class="badge__label">Diseñado por</span><span class="badge__who">UNA HUMANA</span></span></li>
               <li class="badge badge--escrito"><span class="credito"><video data-lazy muted loop playsinline preload="none" poster="assets/video/credito-escrito-por-poster.webp" width="49" height="50" aria-hidden="true" tabindex="-1"><source src="assets/video/credito-escrito-por.webm" type="video/webm"><source src="assets/video/credito-escrito-por.mp4" type="video/mp4"></video><img class="credito__still" src="assets/video/credito-escrito-por-poster.webp" alt="" width="49" height="50"></span><span class="badge__text"><span class="badge__label">Escrito por</span><span class="badge__who">UNA HUMANA</span></span></li>
               <li class="badge badge--codeado"><span class="credito"><video data-lazy muted loop playsinline preload="none" poster="assets/video/credito-codeado-por-poster.webp" width="49" height="49" aria-hidden="true" tabindex="-1"><source src="assets/video/credito-codeado-por.webm" type="video/webm"><source src="assets/video/credito-codeado-por.mp4" type="video/mp4"></video><img class="credito__still" src="assets/video/credito-codeado-por-poster.webp" alt="" width="49" height="49"></span><span class="badge__text"><span class="badge__label">Codeado por</span><span class="badge__who">UN robot</span></span></li>
             </ul>
-            <p class="ornament" aria-hidden="true">︵︵︵ ๑ ✧･ﾟ: ✧･ﾟ: ☾ :･ﾟ✧:･ﾟ✧ ๑ ︵︵︵</p>
+            <p class="ornament" aria-hidden="true">︵︵︵ ๑ ⋆･ﾟ: ⋆･ﾟ: ☾ :･ﾟ⋆:･ﾟ⋆ ๑ ︵︵︵</p>
             <p class="credits"><img src="assets/creditos-izq.gif" alt="" width="20" height="20"><a href="#">Créditos</a><img src="assets/creditos-der.gif" alt="" width="20" height="20"></p>
           </aside>
         </div>
@@ -121,14 +123,16 @@
             </div>
           </section>
 
+          <img class="sep" src="assets/separador-arcoiris.gif" alt="" width="319" height="8" loading="lazy">
+
           <section class="window window--outlined" aria-labelledby="sobre-mi">
             <h2 class="window__bar" id="sobre-mi"><span aria-hidden="true">x•┈*⋯SOBRE_MÍ⋯*┈•x</span><span class="visually-hidden">Sobre mí</span></h2>
             <div class="window__body">
               <div class="about-item">
                 <h3 class="about-item__label">Mi estilo</h3>
                 <div class="about-item__text">
-                  <p><strong>Me gustan mucho las cosas diferentes, disruptivas y únicas. Me considero alguien muy creativa, desde que tengo uso de razón.</strong></p>
-                  <p>Generalmente diseño interfaces minimalistas, que siguen estándares de la industria y que funcionan para todas las personas. <strong>Pero si el proyecto me deja </strong>(como con este portafolio)<strong>, se me aloca la mano de diseñadora.</strong></p>
+                  <p>Me gustan mucho las cosas disruptivas y únicas.</p>
+                  <p>Generalmente diseño interfaces minimalistas, que siguen estándares de la industria y que funcionan para todas las personas. Pero si el proyecto me deja (como con este portafolio), se me aloca la mano de diseñadora.</p>
                   <p aria-hidden="true">(*^-^*)</p>
                   <p>Creo que lo profesional, lo creativo y lo accesible son posibles en una interfaz.</p>
                 </div>
