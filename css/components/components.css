@@ -53,21 +53,24 @@
   /* avatar */
   .avatar-card {
     display: grid; justify-items: center; gap: var(--space-3);
-    background: var(--glass); padding: 0 0.5rem 1.125rem;   /* menos relleno: el borde ya aporta 8 px */
+    background: var(--glass); padding: 0 0.25rem 0.75rem;   /* menos relleno: el borde ya aporta 12 px */
   }
-  /* borde ondulado: solo el trazo blanco (tile SVG 24×24, 9-slice 8/8/8). El fondo llega hasta el borde
-     y el radio chico recorta las esquinas del fondo para que no asomen fuera de la onda.
-     Para otro color: duplicar el SVG con otro stroke y cambiar border-image-source. */
+  /* borde ondulado pixel-art: tile PNG 23×23 con trazo blanco de 1 px, 9-slice 8, escalado 1.5× (border-width 12px; 8px = píxeles 1:1, 16px = 2× nítido).
+     El centro del tile está vacío: la card conserva su fondo, que pasa por debajo del borde (border-box).
+     Los píxeles transparentes de las esquinas dejan ver el fondo; si asoma fuera de la onda, recortarlo con clip-path.
+     Para otro color: duplicar assets/scallop-pixel-white.svg con otro fill y usarlo como source. */
   .card-scallop {
-    border: 8px solid transparent;
-    border-image: url("../../assets/scallop-border-white.svg") 8 / 1 / 0 round;
+    border-style: solid;
+    border-color: transparent;
+    border-width: 12px;
+    border-image: url("../../assets/scallop-pixel-white.png") 8 / 12px / 0 round;
+    image-rendering: pixelated;
     background-clip: border-box;
-    border-radius: 8px;
   }
   .avatar { display: grid; justify-items: center; gap: 0.5rem; text-align: center; inline-size: 100%; }
   .avatar__name { font-family: var(--font-hero); font-size: 1.125rem; line-height: 1.2; font-weight: 700; }
   /* ancho completo de la columna: el personaje camina dentro de él */
-  .avatar__frame { display: grid; place-items: center; inline-size: 100%; min-block-size: 16.8125rem; align-items: end; padding-block-start: var(--space-3); }
+  .avatar__frame { display: grid; place-items: center; inline-size: 100%; min-block-size: 14.5rem; align-items: end; padding-block-start: var(--space-3); }
   .avatar figcaption { font-size: 0.8125rem; line-height: 1.25; }
   .playlist { display: flex; align-items: center; justify-content: center; gap: 0.25rem; font-size: var(--text-small); }
   .playlist img, .credits img { inline-size: 1.25rem; block-size: 1.25rem; image-rendering: pixelated; }
@@ -86,21 +89,19 @@
   /* "YO❤" queda a la izquierda del monitor; "ACCESIBILIDAD" centrado en la base */
   .stamp-a11y__text span:first-child { text-align: left; padding-inline-start: 6px; }
 
-  .sep { justify-self: center; image-rendering: pixelated; max-inline-size: 100%; block-size: auto; }
+  .sep { margin-block: 2px; justify-self: center; image-rendering: pixelated; max-inline-size: 100%; block-size: auto; }
 
   /* extras: contador, badges, créditos */
   .extras {
-    display: grid; justify-items: center; gap: 0.75rem; padding: var(--space-4) var(--space-3);
+    display: grid; justify-items: center; gap: 1rem; padding: var(--space-4) var(--space-3);
     background: var(--glass); border-radius: var(--radius);
   }
   .ornament { font-size: 0.8125rem; line-height: 1; text-align: center; white-space: nowrap; color: var(--card-divider); }
   /* adornos de texto: fuentes de respaldo con los glifos (tailandés, katakana, símbolos) */
   .ornament, .divider { font-family: var(--font-body), "Noto Sans Thai", "Noto Sans JP", "Noto Sans Math", "Noto Sans Symbols 2", sans-serif; }
-  /* contador: PNG de Paper recortado 111×26 (la imagen se muestra a tamaño original) */
-  .counter {
-    inline-size: 111px; block-size: 26px; border-radius: 2px; image-rendering: pixelated;
-    background: url("../../assets/contador.png") -44px -38px / 208px 88px no-repeat;
-  }
+  /* contador: lo dibuja FC2 (script de terceros) como imagen; solo se centra */
+  .counter { display: flex; justify-content: center; }
+  .counter img { image-rendering: pixelated; }
   .badges { list-style: none; padding: 0; display: grid; gap: 0.75rem; }
   /* cada crédito tiene su color de fondo y de nombre; el contorno repite el fondo */
   .badge {

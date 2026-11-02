@@ -17,6 +17,8 @@
     --orange: #f26b1d;        /* hover de los links sobre fondo oscuro */
     --rust: #c93f00;
     --focus: #ffd84a;
+    --selection: #41efb9;     /* fondo del texto seleccionado (verde menta brillante) */
+    --selection-ink: #000;    /* contraste ≈14:1 sobre --selection (AAA) */
 
     /* tarjetas oscuras (proyecto, sobre mí) */
     --card: #07011b;

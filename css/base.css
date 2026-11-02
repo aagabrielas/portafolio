@@ -18,6 +18,7 @@
   }
   h1, h2, h3 { line-height: 1.2; }
   a { color: inherit; text-underline-offset: 0.2em; }
+  ::selection { background: var(--selection); color: var(--selection-ink); }
   :focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
 
   .skip-link {
