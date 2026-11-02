@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/components/components.css">
   <link rel="stylesheet" href="css/components/button.css">
+  <link rel="stylesheet" href="css/components/a11y-modal.css">
 </head>
 <body>
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
@@ -70,7 +71,7 @@
               <ul class="icon-links icon-links--thick">
                 <li><img src="assets/icon-papeleria.gif" alt="" width="20" height="20"><a href="#">Papelería creativa</a></li>
                 <li><img src="assets/icon-ilustraciones.gif" alt="" width="20" height="20"><a href="#">Ilustraciones</a></li>
-                <li><img src="assets/icon-accesibilidad.gif" alt="" width="20" height="20"><a href="#">Accesibilidad</a></li>
+                <li><img src="assets/icon-accesibilidad.gif" alt="" width="20" height="20"><a href="accesibilidad/" data-a11y-open aria-haspopup="dialog">Accesibilidad</a></li>
               </ul>
             </div>
           </section>
@@ -214,11 +215,86 @@
     </div>
   </footer>
 
+  <dialog class="a11y-modal" id="a11y-modal" aria-labelledby="a11y-modal-title">
+    <div class="a11y-modal__bar">
+      <div class="a11y-modal__label">
+        <img src="assets/modal-fantasma.gif" alt="" width="16" height="16">
+        <h2 class="a11y-modal__title" id="a11y-modal-title">Accesibilidad del sitio</h2>
+      </div>
+      <div class="a11y-modal__actions">
+        <span class="a11y-modal__btn a11y-modal__btn--deco" aria-hidden="true"><svg viewBox="0 0 8 8"><path d="M0 6h7v2H0z"/></svg></span>
+        <span class="a11y-modal__btn a11y-modal__btn--deco" aria-hidden="true"><svg viewBox="0 0 8 8"><path fill-rule="evenodd" d="M0 0h8v8H0zM1 2v5h6V2z"/></svg></span>
+        <button type="button" class="a11y-modal__btn a11y-modal__btn--close" data-a11y-close aria-label="Cerrar">
+          <svg viewBox="0 0 8 8" aria-hidden="true"><path d="M0 0h2v1h1v1h2V1h1V0h2v2H7v1H6v2h1v1h1v2H6V7H5V6H3v1H2v1H0V6h1V5h1V3H1V2H0z"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="a11y-modal__frame">
+      <div class="a11y-modal__menu" aria-hidden="true"><span>Archivo</span><span>Editar</span><span>Herramientas</span><span>Ayuda</span></div>
+      <div class="a11y-modal__scroll" tabindex="0" role="region" aria-labelledby="a11y-modal-title">
+        <p class="a11y-modal__hero" aria-hidden="true"><img src="assets/modal-arcoiris-izq.gif" alt="" width="20" height="20"><span>ACCESIBILIDAD</span><img src="assets/modal-arcoiris-der.gif" alt="" width="20" height="20"></p>
+        <div>
+          <p>Acá les dejo las notas de accesibilidad de este sitio: todo lo que decidí al diseñarlo y lo que estuve pendiente de pedirle a la IA cuando codeé el portafolio. Me importa mucho la accesibilidad, así que lo importante es partir por mi propio sitio.</p>
+          <p style="margin-block-start:1.1em"><strong>No diré que es perfecto: la accesibilidad es un mundo gigante y, poco a poco, iré mejorando el sitio.</strong></p>
+        </div>
+        <p class="divider a11y-modal__sep" aria-hidden="true">︵︵︵︵⋆⁺₊⋆ ☾ ⋆⁺₊⋆ ☁︎ ⋆⁺₊⋆ ☾ ⋆⁺₊⋆︵︵︵︵</p>
+
+        <section class="a11y-modal__sec" aria-labelledby="m-animacion">
+          <h3 id="m-animacion">Animación</h3>
+          <p>Es evidente que <strong>mi portafolio tiene mucho movimiento y animaciones</strong> (GIFs, videos, interacciones). Si bien es parte de la gracia del diseño estilo y2k, <strong>nadie tiene por qué aguantarse ver tanto movimiento si no quiere.</strong></p>
+          <ul class="a11y-modal__list">
+            <li><div><p><strong>Botón “Pausar animaciones”.</strong> El portafolio cuenta con este botón en la cabecera, antes del contenido. Detiene todas las animaciones y te permite ver el sitio en su versión estática.</p><p>Además es un botón con <code>aria-pressed</code>, así que se anuncia si está activado. Tu elección se guarda en tu navegador para la próxima visita (sin cuentas).</p></div></li>
+            <li><div><strong>Respeto <code>prefers-reduced-motion</code>.</strong> Si en tu configuración tienes puesto que quieres menos movimiento, el sitio parte quieto sin que toques nada.</div></li>
+            <li><div><strong>Nada parpadea muy rápido.</strong> Las animaciones que tienen parpadeos no cambian más de 3 veces por segundo.</div></li>
+            <li><div><strong>Los videos son decorativos.</strong> Están silenciados, no tienen controles, están fuera del orden de tabulación y los lectores de pantalla los ignoran. Además, ninguno pesa más de 50 KB.</div></li>
+            <li><div><strong>Efectos solo con mouse.</strong> Los efectos que se activan al pasar el mouse no se activan si se navega de otra forma en el sitio.</div></li>
+            <li><div><strong>Si tu navegador no soporta WebGL</strong> (o se pierde el contexto gráfico), los efectos simplemente desaparecen.</div></li>
+          </ul>
+        </section>
+        <p class="divider a11y-modal__sep" aria-hidden="true">︵︵︵︵⋆⁺₊⋆ ☾ ⋆⁺₊⋆ ☁︎ ⋆⁺₊⋆ ☾ ⋆⁺₊⋆︵︵︵︵</p>
+
+        <section class="a11y-modal__sec" aria-labelledby="m-teclado">
+          <h3 id="m-teclado">Teclado y foco</h3>
+          <ul class="a11y-modal__list">
+            <li><div><strong>Enlace para saltar al contenido.</strong> Es lo primero que recibe el foco al presionar “Tab” y se hace visible al enfocarlo.</div></li>
+            <li><div><strong>Foco siempre visible.</strong> Cuenta con un contorno amarillo de 3 px de separación, con buen contraste sobre la interfaz oscura del sitio.</div></li>
+            <li><div><strong>Elementos nativos.</strong> Todo lo que se puede clickear es un elemento nativo, por lo que funciona muy bien con “Tab”, “Enter” y “Espacio” sin código extra.</div></li>
+            <li><div><strong>Los links se reconocen sin depender del color.</strong> Siempre van subrayados; el color naranja solo sale al hacer hover y foco como refuerzo.</div></li>
+            <li><div><strong>Tamaño de los controles.</strong> Los elementos interactuables miden 44 px de alto, para asegurar su área accionable.</div></li>
+          </ul>
+        </section>
+        <p class="divider a11y-modal__sep" aria-hidden="true">︵︵︵︵⋆⁺₊⋆ ☾ ⋆⁺₊⋆ ☁︎ ⋆⁺₊⋆ ☾ ⋆⁺₊⋆︵︵︵︵</p>
+
+        <section class="a11y-modal__sec" aria-labelledby="m-lectores">
+          <h3 id="m-lectores">Lectores de pantalla y semántica</h3>
+          <ul class="a11y-modal__list">
+            <li><div><strong>HTML semántico.</strong> Tiene un uso correcto de las etiquetas para que las tecnologías asistivas puedan leer correctamente la estructura del sitio.</div></li>
+            <li><div><strong>Idioma declarado.</strong> La página cuenta con su etiqueta de idioma correcta, y el link “English” también lleva su propia etiqueta de idioma.</div></li>
+            <li><div><strong>Los adornos no se leen.</strong> Los símbolos, emoticones, marcos y pixel-art están ocultos con <code>aria-hidden</code>. Cada título de ventana tiene una versión limpia solo para lectores de pantalla: ven “Otras cositas”, no “x•*⋯otras_cositas⋯*•x”.</div></li>
+            <li><div><strong>Título animado.</strong> Para construir el efecto del título principal tuve que dividirlo letra por letra, pero para las tecnologías asistivas se leerá como un texto completo.</div></li>
+            <li><div><strong>Avisos sin recargar.</strong> El botón que copia el email anuncia la acción; si tu navegador bloquea estas acciones, entonces se muestra el correo electrónico. Y el botón de LinkedIn avisa que abre una nueva ventana y te saca del contexto.</div></li>
+          </ul>
+        </section>
+        <p class="divider a11y-modal__sep" aria-hidden="true">︵︵︵︵⋆⁺₊⋆ ☾ ⋆⁺₊⋆ ☁︎ ⋆⁺₊⋆ ☾ ⋆⁺₊⋆︵︵︵︵</p>
+
+        <section class="a11y-modal__sec" aria-labelledby="m-colores">
+          <h3 id="m-colores">Colores, contraste y texto</h3>
+          <ul class="a11y-modal__list">
+            <li><div><strong>Contrastes que cumplen AA y AAA.</strong> En la fase de diseño tuve mucho cuidado de elegir combinaciones de colores que pasen los criterios de contraste establecidos por la WCAG.</div></li>
+            <li><div><strong>Tipografía.</strong> Uso Verdana para párrafos y textos extensos, con el interlineado adecuado. La fuente pixelada la uso solo en títulos cortos porque puede cansar leerla.</div></li>
+            <li><div><strong>Zoom y tamaño de la letra.</strong> Los tamaños de texto están en “rem” y la página no bloquea el zoom, así que el tamaño que tengas configurado en tu navegador es el que verás.</div></li>
+          </ul>
+        </section>
+      </div>
+    </div>
+  </dialog>
+
   <script src="js/smoke/glitter-smoke.js"></script>
   <script src="js/character/sprite-data.js"></script>
   <script src="js/character/mld-character.js"></script>
   <script src="js/app.js"></script>
   <script src="js/contact.js"></script>
+  <script src="js/a11y-modal.js"></script>
   <script src="js/text-scramble.js"></script>
   <script src="js/weight-title.js"></script>
   <script>new WeightTitle(document.getElementById('titulo'), { restWeight: 400, nearWeight: 700 });</script>
