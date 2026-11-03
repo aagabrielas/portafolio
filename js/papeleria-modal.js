@@ -14,7 +14,11 @@ document.querySelectorAll('dialog.papeleria-modal').forEach((dialog) => {
 
     win.querySelector('.a11y-modal__scroll').scrollTop = 0;
     // el botón pulsado queda oculto: el foco pasa al botón equivalente de la página nueva
-    if (focusNav) (pages[index].querySelector(focusNav) || pages[index].querySelector('.pp-nav__btn'))?.focus();
+    // (se salta la copia oculta de los botones: en móvil de Ilustraciones solo se ven los de abajo)
+    if (focusNav) {
+      const visible = (sel) => [...pages[index].querySelectorAll(sel)].find((b) => b.offsetParent);
+      (visible(focusNav) || visible('.pp-nav__btn'))?.focus();
+    }
   };
 
   dialog.addEventListener('modal:open', (e) => {

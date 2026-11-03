@@ -15,7 +15,11 @@
   .pp-caption { grid-row: 3; }
 
   @media (max-width: 40rem) {
+    .ilustraciones-modal .pp-page.il-page { grid-template-rows: none; }
+    .il-page .pp-caption { grid-row: auto; }
     .il-page .il-side { display: none; }
+    /* es una sola imagen por página: Anterior / Siguiente solo van al final, debajo de la descripción */
+    .il-page > .pp-nav:not(.pp-nav--end) { display: none; }
     .il-page .il-main { grid-row: auto; aspect-ratio: 4 / 3; }
   }
 }
