@@ -20,6 +20,9 @@
     overflow: hidden;
   }
   .a11y-modal[open] { display: flex; flex-direction: column; }
+  /* una ventana por idioma; js/a11y-modal.js muestra la que coincide con <html lang> */
+  .a11y-modal__win { flex: 1; min-block-size: 0; display: flex; flex-direction: column; }
+  .a11y-modal__win[hidden] { display: none; }
   .a11y-modal::backdrop { background: rgb(0 0 0 / 0.55); }
   html:has(.a11y-modal[open]) { overflow: hidden; }
 
@@ -93,6 +96,13 @@
     background: url("../../assets/modal-corazon.gif") center / contain no-repeat; image-rendering: pixelated;
   }
   .a11y-modal__list p + p { margin-block-start: 0.75rem; }
+  .a11y-modal__lead { margin-block-start: 1.1em; }
+  /* firma: conejita + nombre, solo adorno */
+  .a11y-modal__sign {
+    white-space: pre; color: #00a7fb; line-height: 1.3;
+    font-family: var(--font-body), "Noto Sans JP", "Noto Sans Math", "Noto Sans Symbols 2", sans-serif;
+  }
+  .a11y-modal__sign span { font-family: var(--font-hero); }
 
   @media (max-width: 40rem) {
     .a11y-modal { margin-inline: 0.5rem; inline-size: calc(100vw - 1rem); }

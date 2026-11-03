@@ -215,76 +215,199 @@
     </div>
   </footer>
 
-  <dialog class="a11y-modal" id="a11y-modal" aria-labelledby="a11y-modal-title">
-    <div class="a11y-modal__bar">
-      <div class="a11y-modal__label">
-        <img src="assets/modal-fantasma.gif" alt="" width="16" height="16">
-        <h2 class="a11y-modal__title" id="a11y-modal-title">Accesibilidad del sitio</h2>
+  <dialog class="a11y-modal" id="a11y-modal">
+    <div class="a11y-modal__win" lang="es">
+      <div class="a11y-modal__bar">
+        <div class="a11y-modal__label">
+          <img src="assets/modal-fantasma.gif" alt="" width="16" height="16">
+          <h2 class="a11y-modal__title" id="m-es-title">Accesibilidad del sitio</h2>
+        </div>
+        <div class="a11y-modal__actions">
+          <span class="a11y-modal__btn a11y-modal__btn--deco" aria-hidden="true"><svg viewBox="0 0 8 8"><path d="M0 6h7v2H0z"/></svg></span>
+          <span class="a11y-modal__btn a11y-modal__btn--deco" aria-hidden="true"><svg viewBox="0 0 8 8"><path fill-rule="evenodd" d="M0 0h8v8H0zM1 2v5h6V2z"/></svg></span>
+          <button type="button" class="a11y-modal__btn a11y-modal__btn--close" data-a11y-close aria-label="Cerrar">
+            <svg viewBox="0 0 8 8" aria-hidden="true"><path d="M0 0h2v1h1v1h2V1h1V0h2v2H7v1H6v2h1v1h1v2H6V7H5V6H3v1H2v1H0V6h1V5h1V3H1V2H0z"/></svg>
+          </button>
+        </div>
       </div>
-      <div class="a11y-modal__actions">
-        <span class="a11y-modal__btn a11y-modal__btn--deco" aria-hidden="true"><svg viewBox="0 0 8 8"><path d="M0 6h7v2H0z"/></svg></span>
-        <span class="a11y-modal__btn a11y-modal__btn--deco" aria-hidden="true"><svg viewBox="0 0 8 8"><path fill-rule="evenodd" d="M0 0h8v8H0zM1 2v5h6V2z"/></svg></span>
-        <button type="button" class="a11y-modal__btn a11y-modal__btn--close" data-a11y-close aria-label="Cerrar">
-          <svg viewBox="0 0 8 8" aria-hidden="true"><path d="M0 0h2v1h1v1h2V1h1V0h2v2H7v1H6v2h1v1h1v2H6V7H5V6H3v1H2v1H0V6h1V5h1V3H1V2H0z"/></svg>
-        </button>
-      </div>
-    </div>
-    <div class="a11y-modal__frame">
-      <div class="a11y-modal__menu" aria-hidden="true"><span>Archivo</span><span>Editar</span><span>Herramientas</span><span>Ayuda</span></div>
-      <div class="a11y-modal__scroll" tabindex="0" role="region" aria-labelledby="a11y-modal-title">
+      <div class="a11y-modal__frame">
+        <div class="a11y-modal__menu" aria-hidden="true"><span>Archivo</span><span>Editar</span><span>Herramientas</span><span>Ayuda</span></div>
+        <div class="a11y-modal__scroll" tabindex="0" role="region" aria-labelledby="m-es-title">
         <p class="a11y-modal__hero" aria-hidden="true"><img src="assets/modal-arcoiris-izq.gif" alt="" width="20" height="20"><span>ACCESIBILIDAD</span><img src="assets/modal-arcoiris-der.gif" alt="" width="20" height="20"></p>
         <div>
-          <p>Acá les dejo las notas de accesibilidad de este sitio: todo lo que decidí al diseñarlo y lo que estuve pendiente de pedirle a la IA cuando codeé el portafolio. Me importa mucho la accesibilidad, así que lo importante es partir por mi propio sitio.</p>
-          <p style="margin-block-start:1.1em"><strong>No diré que es perfecto: la accesibilidad es un mundo gigante y, poco a poco, iré mejorando el sitio.</strong></p>
+          <p>Acá les dejo las notas de accesibilidad de este sitio. Todo lo que decidí al diseñarlo y que estuve especialmente atenta de pedirle a la IA cuando codeo el portafolio. Me importa mucho la accesibilidad, así que cómo no iba a tener un portafolio accesible.</p>
+          <p class="a11y-modal__lead"><strong>No diré que es perfecto: la accesibilidad es un mundo gigante y poco a poco iré mejorando el sitio.</strong></p>
         </div>
         <p class="divider a11y-modal__sep" aria-hidden="true">︵︵︵︵⋆⁺₊⋆ ☾ ⋆⁺₊⋆ ☁︎ ⋆⁺₊⋆ ☾ ⋆⁺₊⋆︵︵︵︵</p>
-
-        <section class="a11y-modal__sec" aria-labelledby="m-animacion">
-          <h3 id="m-animacion">Animación</h3>
+        <section class="a11y-modal__sec" aria-labelledby="m-es-0">
+          <h3 id="m-es-0">Animación</h3>
           <p>Es evidente que <strong>mi portafolio tiene mucho movimiento y animaciones</strong> (GIFs, videos, interacciones). Si bien es parte de la gracia del diseño estilo y2k, <strong>nadie tiene por qué aguantarse ver tanto movimiento si no quiere.</strong></p>
           <ul class="a11y-modal__list">
-            <li><div><p><strong>Botón “Pausar animaciones”.</strong> El portafolio cuenta con este botón en la cabecera, antes del contenido. Detiene todas las animaciones y te permite ver el sitio en su versión estática.</p><p>Además es un botón con <code>aria-pressed</code>, así que se anuncia si está activado. Tu elección se guarda en tu navegador para la próxima visita (sin cuentas).</p></div></li>
-            <li><div><strong>Respeto <code>prefers-reduced-motion</code>.</strong> Si en tu configuración tienes puesto que quieres menos movimiento, el sitio parte quieto sin que toques nada.</div></li>
+            <li><div><p><strong>Botón “Pausar animaciones”.</strong> El portafolio cuenta con este botón en la cabecera, antes del contenido. Este botón detiene todas las animaciones y te permite ver el sitio en su versión estática.</p><p>Además es un botón con aria-pressed, así que se anuncia si está activado. Tu elección se guarda en tu navegador para la próxima visita (sin cuentas).</p></div></li>
+            <li><div><strong>Respeto prefers-reduced-motion.</strong> Si en tu configuración tienes puesto que quieres menos movimientos, el sitio parte quieto sin que toques nada.</div></li>
             <li><div><strong>Nada parpadea muy rápido.</strong> Las animaciones que tienen parpadeos no cambian más de 3 veces por segundo.</div></li>
-            <li><div><strong>Los videos son decorativos.</strong> Están silenciados, no tienen controles, están fuera del orden de tabulación y los lectores de pantalla los ignoran. Además, ninguno pesa más de 50 KB.</div></li>
+            <li><div><strong>Los videos son decorativos.</strong> Están silenciados, no tienen controles, están fuera del orden de tabulación y los lectores de pantalla los ignoran. Además, ninguno pesa más de 50KB.</div></li>
             <li><div><strong>Efectos solo con mouse.</strong> Los efectos que se activan al pasar el mouse no se activan si se navega de otra forma en el sitio.</div></li>
-            <li><div><strong>Si tu navegador no soporta WebGL</strong> (o se pierde el contexto gráfico), los efectos simplemente desaparecen.</div></li>
+            <li><div><strong>Si tu navegador no soporta WebGL</strong> (o se pierde el contexto gráfico). Los efectos simplemente desaparecen.</div></li>
           </ul>
         </section>
         <p class="divider a11y-modal__sep" aria-hidden="true">︵︵︵︵⋆⁺₊⋆ ☾ ⋆⁺₊⋆ ☁︎ ⋆⁺₊⋆ ☾ ⋆⁺₊⋆︵︵︵︵</p>
-
-        <section class="a11y-modal__sec" aria-labelledby="m-teclado">
-          <h3 id="m-teclado">Teclado y foco</h3>
+        <section class="a11y-modal__sec" aria-labelledby="m-es-1">
+          <h3 id="m-es-1">Teclado y foco</h3>
           <ul class="a11y-modal__list">
             <li><div><strong>Enlace para saltar al contenido.</strong> Es lo primero que recibe el foco al presionar “Tab” y se hace visible al enfocarlo.</div></li>
-            <li><div><strong>Foco siempre visible.</strong> Cuenta con un contorno amarillo de 3 px de separación, con buen contraste sobre la interfaz oscura del sitio.</div></li>
+            <li><div><strong>Foco siempre visible.</strong> Cuenta con un contorno amarillo de 3px de separación, con buen contraste sobre la interfaz oscura del sitio.</div></li>
             <li><div><strong>Elementos nativos.</strong> Todo lo que se puede clickear es un elemento nativo, por lo que funciona muy bien con “Tab”, “Enter” y “Espacio” sin código extra.</div></li>
-            <li><div><strong>Los links se reconocen sin depender del color.</strong> Siempre van subrayados; el color naranja solo sale al hacer hover y foco como refuerzo.</div></li>
-            <li><div><strong>Tamaño de los controles.</strong> Los elementos interactuables miden 44 px de alto, para asegurar su área accionable.</div></li>
           </ul>
         </section>
         <p class="divider a11y-modal__sep" aria-hidden="true">︵︵︵︵⋆⁺₊⋆ ☾ ⋆⁺₊⋆ ☁︎ ⋆⁺₊⋆ ☾ ⋆⁺₊⋆︵︵︵︵</p>
-
-        <section class="a11y-modal__sec" aria-labelledby="m-lectores">
-          <h3 id="m-lectores">Lectores de pantalla y semántica</h3>
+        <section class="a11y-modal__sec" aria-labelledby="m-es-2">
+          <h3 id="m-es-2">Lectores de pantalla y semántica</h3>
           <ul class="a11y-modal__list">
             <li><div><strong>HTML semántico.</strong> Tiene un uso correcto de las etiquetas para que las tecnologías asistivas puedan leer correctamente la estructura del sitio.</div></li>
             <li><div><strong>Idioma declarado.</strong> La página cuenta con su etiqueta de idioma correcta, y el link “English” también lleva su propia etiqueta de idioma.</div></li>
-            <li><div><strong>Los adornos no se leen.</strong> Los símbolos, emoticones, marcos y pixel-art están ocultos con <code>aria-hidden</code>. Cada título de ventana tiene una versión limpia solo para lectores de pantalla: ven “Otras cositas”, no “x•*⋯otras_cositas⋯*•x”.</div></li>
-            <li><div><strong>Título animado.</strong> Para construir el efecto del título principal tuve que dividirlo letra por letra, pero para las tecnologías asistivas se leerá como un texto completo.</div></li>
-            <li><div><strong>Avisos sin recargar.</strong> El botón que copia el email anuncia la acción; si tu navegador bloquea estas acciones, entonces se muestra el correo electrónico. Y el botón de LinkedIn avisa que abre una nueva ventana y te saca del contexto.</div></li>
+            <li><div><strong>Los adornos no se leen.</strong> Los símbolos, emoticones, marcos y pixel-art están ocultos con “aria-hidden”. Cada título de ventana tiene una versión limpia solo para lectores de pantalla: ven “Otras cositas”, no “x•⋯otras_cositas⋯•x”.</div></li>
+            <li><div><strong>Título animado.</strong> Para construir el efecto del título principal tuve que dividir letra por letra, pero para las tecnologías asistivas esto se leerá como un texto completo.</div></li>
+            <li><div><strong>Avisos sin recargar.</strong> El botón que copia el email anuncia la acción; si tu navegador bloquea estas acciones, entonces se anuncia el correo electrónico. Y el botón de LinkedIn avisa que abre una nueva ventana y te saca del contexto.</div></li>
           </ul>
         </section>
         <p class="divider a11y-modal__sep" aria-hidden="true">︵︵︵︵⋆⁺₊⋆ ☾ ⋆⁺₊⋆ ☁︎ ⋆⁺₊⋆ ☾ ⋆⁺₊⋆︵︵︵︵</p>
-
-        <section class="a11y-modal__sec" aria-labelledby="m-colores">
-          <h3 id="m-colores">Colores, contraste y texto</h3>
+        <section class="a11y-modal__sec" aria-labelledby="m-es-3">
+          <h3 id="m-es-3">Colores, contraste y texto</h3>
           <ul class="a11y-modal__list">
             <li><div><strong>Contrastes que cumplen AA y AAA.</strong> En la fase de diseño tuve mucho cuidado de elegir combinaciones de colores que pasen los criterios de contraste establecidos por la WCAG.</div></li>
             <li><div><strong>Tipografía.</strong> Uso Verdana para párrafos y textos extensos, con el interlineado adecuado. La fuente pixelada la uso solo en títulos cortos porque puede cansar leerla.</div></li>
             <li><div><strong>Zoom y tamaño de la letra.</strong> Los tamaños de texto están en “rem” y la página no bloquea el zoom, así que el tamaño que tengas configurado en tu navegador es el que verás.</div></li>
           </ul>
         </section>
+        <p class="divider a11y-modal__sep" aria-hidden="true">︵︵︵︵⋆⁺₊⋆ ☾ ⋆⁺₊⋆ ☁︎ ⋆⁺₊⋆ ☾ ⋆⁺₊⋆︵︵︵︵</p>
+        <section class="a11y-modal__sec" aria-labelledby="m-es-4">
+          <h3 id="m-es-4">Responsive e imágenes</h3>
+          <ul class="a11y-modal__list">
+            <li><div><strong>Responsive.</strong> En pantallas más angostas las dos columnas pasan a una sola, ajustándose al ancho para poder navegar por el sitio desde cualquier dispositivo.</div></li>
+            <li><div><strong>Texto alternativo.</strong> Las imágenes que aportan algo al contenido tienen sus etiquetas alt. Las puramente decorativas llevan la etiqueta vacía para que no se lean.</div></li>
+          </ul>
+        </section>
+        <p class="divider a11y-modal__sep" aria-hidden="true">︵︵︵︵⋆⁺₊⋆ ☾ ⋆⁺₊⋆ ☁︎ ⋆⁺₊⋆ ☾ ⋆⁺₊⋆︵︵︵︵</p>
+        <section class="a11y-modal__sec" aria-labelledby="m-es-5">
+          <h3 id="m-es-5">Otras consideraciones</h3>
+          <ul class="a11y-modal__list">
+            <li><div><strong>Sin instalar nada.</strong> Es HTML, CSS y JavaScript sin dependencias ni pasos de compilación. La única excepción es el contador de visitas, un servicio externo.</div></li>
+            <li><div><strong>Tamaño de los controles.</strong> Los elementos interactuables miden 44px de alto, para asegurar su área accionable.</div></li>
+            <li><div><strong>Los links se reconocen sin depender del color.</strong> Siempre van subrayados; el color naranja solo sale al hacer hover y foco como refuerzo.</div></li>
+          </ul>
+        </section>
+        <p class="divider a11y-modal__sep" aria-hidden="true">︵︵︵︵⋆⁺₊⋆ ☾ ⋆⁺₊⋆ ☁︎ ⋆⁺₊⋆ ☾ ⋆⁺₊⋆︵︵︵︵</p>
+        <section class="a11y-modal__sec" aria-labelledby="m-es-6">
+          <h3 id="m-es-6">Gracias por llegar hasta aquí</h3>
+          <p>Todavía me falta mucho, la accesibilidad no se termina. Tengo en mente ya algunas cosas que aún no están bien:</p>
+          <ul class="a11y-modal__list">
+            <li><div><strong>Contador de visitas.</strong> Al ser un script externo, este lo dibuja como imagen, así que el número no llega a los lectores de pantalla. Solo anuncian “contador de visitas”.</div></li>
+            <li><div><strong>Personaje.</strong> Reacciona al click, pero no tiene equivalente de teclado. Es solo adorno y los lectores de pantalla lo ignoran.</div></li>
+          </ul>
+        </section>
+        <p class="a11y-modal__outro">Si encuentras algo que no te funciona o quieres contarme cómo usas mi sitio, escríbeme a <a href="mailto:ana.silvab93@gmail.com">ana.silvab93@gmail.com</a></p>
+        <p class="a11y-modal__sign" aria-hidden="true">/)/)
+( . .)
+( づ♡  »-(¯`·.·´¯)-&gt; <span>Ana</span></p>
+        </div>
+      </div>
+    </div>
+    <div class="a11y-modal__win" lang="en">
+      <div class="a11y-modal__bar">
+        <div class="a11y-modal__label">
+          <img src="assets/modal-fantasma.gif" alt="" width="16" height="16">
+          <h2 class="a11y-modal__title" id="m-en-title">Site accessibility</h2>
+        </div>
+        <div class="a11y-modal__actions">
+          <span class="a11y-modal__btn a11y-modal__btn--deco" aria-hidden="true"><svg viewBox="0 0 8 8"><path d="M0 6h7v2H0z"/></svg></span>
+          <span class="a11y-modal__btn a11y-modal__btn--deco" aria-hidden="true"><svg viewBox="0 0 8 8"><path fill-rule="evenodd" d="M0 0h8v8H0zM1 2v5h6V2z"/></svg></span>
+          <button type="button" class="a11y-modal__btn a11y-modal__btn--close" data-a11y-close aria-label="Close">
+            <svg viewBox="0 0 8 8" aria-hidden="true"><path d="M0 0h2v1h1v1h2V1h1V0h2v2H7v1H6v2h1v1h1v2H6V7H5V6H3v1H2v1H0V6h1V5h1V3H1V2H0z"/></svg>
+          </button>
+        </div>
+      </div>
+      <div class="a11y-modal__frame">
+        <div class="a11y-modal__menu" aria-hidden="true"><span>File</span><span>Edit</span><span>Tools</span><span>Help</span></div>
+        <div class="a11y-modal__scroll" tabindex="0" role="region" aria-labelledby="m-en-title">
+        <p class="a11y-modal__hero" aria-hidden="true"><img src="assets/modal-arcoiris-izq.gif" alt="" width="20" height="20"><span>ACCESSIBILITY</span><img src="assets/modal-arcoiris-der.gif" alt="" width="20" height="20"></p>
+        <div>
+          <p>Here are the accessibility notes for this site. Everything I decided while designing it, and that I was especially careful to ask the AI for when I code the portfolio. I care a lot about accessibility, so of course I wasn’t going to have an inaccessible portfolio.</p>
+          <p class="a11y-modal__lead"><strong>I won’t say it’s perfect: accessibility is a giant world and I’ll keep improving the site little by little.</strong></p>
+        </div>
+        <p class="divider a11y-modal__sep" aria-hidden="true">︵︵︵︵⋆⁺₊⋆ ☾ ⋆⁺₊⋆ ☁︎ ⋆⁺₊⋆ ☾ ⋆⁺₊⋆︵︵︵︵</p>
+        <section class="a11y-modal__sec" aria-labelledby="m-en-0">
+          <h3 id="m-en-0">Animation</h3>
+          <p>It’s obvious that <strong>my portfolio has a lot of movement and animation</strong> (GIFs, videos, interactions). While it’s part of the charm of the Y2K style, <strong>nobody should have to put up with that much motion if they don’t want to.</strong></p>
+          <ul class="a11y-modal__list">
+            <li><div><p><strong>“Pause animations” button.</strong> The portfolio has this button in the header, before the content. It stops all animations and lets you see the site in its static version.</p><p>It’s also a button with aria-pressed, so its state is announced. Your choice is saved in your browser for your next visit (no accounts).</p></div></li>
+            <li><div><strong>Respects prefers-reduced-motion.</strong> If your settings say you want less motion, the site starts still without you touching anything.</div></li>
+            <li><div><strong>Nothing flashes too fast.</strong> Animations that blink don’t change more than 3 times per second.</div></li>
+            <li><div><strong>Videos are decorative.</strong> They’re muted, have no controls, sit outside the tab order and screen readers ignore them. Also, none weighs more than 50KB.</div></li>
+            <li><div><strong>Mouse-only effects.</strong> Effects triggered by hovering the mouse don’t activate if you navigate the site another way.</div></li>
+            <li><div><strong>If your browser doesn’t support WebGL</strong> (or the graphics context is lost). The effects simply disappear.</div></li>
+          </ul>
+        </section>
+        <p class="divider a11y-modal__sep" aria-hidden="true">︵︵︵︵⋆⁺₊⋆ ☾ ⋆⁺₊⋆ ☁︎ ⋆⁺₊⋆ ☾ ⋆⁺₊⋆︵︵︵︵</p>
+        <section class="a11y-modal__sec" aria-labelledby="m-en-1">
+          <h3 id="m-en-1">Keyboard and focus</h3>
+          <ul class="a11y-modal__list">
+            <li><div><strong>Skip-to-content link.</strong> It’s the first thing to receive focus when you press “Tab” and it becomes visible when focused.</div></li>
+            <li><div><strong>Focus is always visible.</strong> It has a yellow outline with a 3px offset, with good contrast against the site’s dark interface.</div></li>
+            <li><div><strong>Native elements.</strong> Everything you can click is a native element, so it works great with “Tab”, “Enter” and “Space” with no extra code.</div></li>
+          </ul>
+        </section>
+        <p class="divider a11y-modal__sep" aria-hidden="true">︵︵︵︵⋆⁺₊⋆ ☾ ⋆⁺₊⋆ ☁︎ ⋆⁺₊⋆ ☾ ⋆⁺₊⋆︵︵︵︵</p>
+        <section class="a11y-modal__sec" aria-labelledby="m-en-2">
+          <h3 id="m-en-2">Screen readers and semantics</h3>
+          <ul class="a11y-modal__list">
+            <li><div><strong>Semantic HTML.</strong> Tags are used correctly so assistive technologies can read the site’s structure properly.</div></li>
+            <li><div><strong>Declared language.</strong> The page has the correct language tag, and the “English” link also carries its own language tag.</div></li>
+            <li><div><strong>Decorations aren’t read aloud.</strong> Symbols, emoticons, frames and pixel art are hidden with “aria-hidden”. Each window title has a clean version for screen readers only: they hear <span lang="es">“Otras cositas”</span>, not <span lang="es">“x•⋯otras_cositas⋯•x”</span>.</div></li>
+            <li><div><strong>Animated title.</strong> To build the main title effect I had to split it letter by letter, but for assistive technologies it will be read as one complete text.</div></li>
+            <li><div><strong>Announcements without reloading.</strong> The button that copies the email announces the action; if your browser blocks it, the email address is announced instead. And the LinkedIn button says it opens a new window and takes you out of context.</div></li>
+          </ul>
+        </section>
+        <p class="divider a11y-modal__sep" aria-hidden="true">︵︵︵︵⋆⁺₊⋆ ☾ ⋆⁺₊⋆ ☁︎ ⋆⁺₊⋆ ☾ ⋆⁺₊⋆︵︵︵︵</p>
+        <section class="a11y-modal__sec" aria-labelledby="m-en-3">
+          <h3 id="m-en-3">Colors, contrast and text</h3>
+          <ul class="a11y-modal__list">
+            <li><div><strong>Contrast that meets AA and AAA.</strong> During the design phase I was very careful to choose color combinations that pass the contrast criteria set by WCAG.</div></li>
+            <li><div><strong>Typography.</strong> I use Verdana for paragraphs and long texts, with adequate line height. I only use the pixel font for short titles because it can be tiring to read.</div></li>
+            <li><div><strong>Zoom and font size.</strong> Text sizes are in “rem” and the page doesn’t block zoom, so the size you’ve set in your browser is the size you’ll see.</div></li>
+          </ul>
+        </section>
+        <p class="divider a11y-modal__sep" aria-hidden="true">︵︵︵︵⋆⁺₊⋆ ☾ ⋆⁺₊⋆ ☁︎ ⋆⁺₊⋆ ☾ ⋆⁺₊⋆︵︵︵︵</p>
+        <section class="a11y-modal__sec" aria-labelledby="m-en-4">
+          <h3 id="m-en-4">Responsive and images</h3>
+          <ul class="a11y-modal__list">
+            <li><div><strong>Responsive.</strong> On narrower screens the two columns become one, adjusting to the width so you can browse the site from any device.</div></li>
+            <li><div><strong>Alternative text.</strong> Images that add to the content have alt tags. Purely decorative ones carry an empty tag so they aren’t read aloud.</div></li>
+          </ul>
+        </section>
+        <p class="divider a11y-modal__sep" aria-hidden="true">︵︵︵︵⋆⁺₊⋆ ☾ ⋆⁺₊⋆ ☁︎ ⋆⁺₊⋆ ☾ ⋆⁺₊⋆︵︵︵︵</p>
+        <section class="a11y-modal__sec" aria-labelledby="m-en-5">
+          <h3 id="m-en-5">Other considerations</h3>
+          <ul class="a11y-modal__list">
+            <li><div><strong>Nothing to install.</strong> It’s HTML, CSS and JavaScript with no dependencies or build steps. The only exception is the visitor counter, an external service.</div></li>
+            <li><div><strong>Control size.</strong> Interactive elements are 44px tall, to ensure a comfortable target area.</div></li>
+            <li><div><strong>Links are recognizable without relying on color.</strong> They’re always underlined; the orange color only appears on hover and focus as reinforcement.</div></li>
+          </ul>
+        </section>
+        <p class="divider a11y-modal__sep" aria-hidden="true">︵︵︵︵⋆⁺₊⋆ ☾ ⋆⁺₊⋆ ☁︎ ⋆⁺₊⋆ ☾ ⋆⁺₊⋆︵︵︵︵</p>
+        <section class="a11y-modal__sec" aria-labelledby="m-en-6">
+          <h3 id="m-en-6">Thanks for making it this far</h3>
+          <p>I still have a long way to go; accessibility is never finished. I already have a few things in mind that aren’t right yet:</p>
+          <ul class="a11y-modal__list">
+            <li><div><strong>Visitor counter.</strong> Since it’s an external script, it draws the number as an image, so it doesn’t reach screen readers. They only announce “visitor counter”.</div></li>
+            <li><div><strong>Character.</strong> It reacts to clicks, but has no keyboard equivalent. It’s decoration only, and screen readers ignore it.</div></li>
+          </ul>
+        </section>
+        <p class="a11y-modal__outro">If you find something that doesn’t work for you or want to tell me how you use my site, write to me at <a href="mailto:ana.silvab93@gmail.com">ana.silvab93@gmail.com</a></p>
+        <p class="a11y-modal__sign" aria-hidden="true">/)/)
+( . .)
+( づ♡  »-(¯`·.·´¯)-&gt; <span>Ana</span></p>
+        </div>
       </div>
     </div>
   </dialog>

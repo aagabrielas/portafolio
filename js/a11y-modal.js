@@ -1,25 +1,36 @@
 /* Ventana "Accesibilidad del sitio": se abre como modal desde los enlaces [data-a11y-open]
-   y se puede arrastrar desde su barra de título. Sin JS (o sin <dialog>) esos enlaces
-   siguen llevando a la página accesibilidad/. */
+   y se puede arrastrar desde su barra de título. Trae una ventana por idioma (es / en) y muestra
+   la que coincide con <html lang>. Sin JS (o sin <dialog>) los enlaces siguen llevando a la página accesibilidad/. */
 (() => {
   const dialog = document.getElementById('a11y-modal');
   if (!dialog || typeof dialog.showModal !== 'function') return;
 
+  const wins = [...dialog.querySelectorAll('.a11y-modal__win')];
   const triggers = document.querySelectorAll('[data-a11y-open]');
-  const scroller = dialog.querySelector('.a11y-modal__scroll');
-  const bar = dialog.querySelector('.a11y-modal__bar');
+  let scroller = null;
+
+  // muestra la ventana del idioma de la página (español si no hay otra)
+  const activate = () => {
+    const lang = (document.documentElement.lang || 'es').slice(0, 2).toLowerCase();
+    const win = wins.find((w) => w.lang === lang) || wins[0];
+    wins.forEach((w) => { w.hidden = w !== win; });
+    dialog.setAttribute('aria-labelledby', win.querySelector('.a11y-modal__title').id);
+    scroller = win.querySelector('.a11y-modal__scroll');
+  };
 
   triggers.forEach((t) => t.addEventListener('click', (e) => {
     e.preventDefault();
     if (dialog.open) return;
+    activate();
     dialog.showModal();
     keepInView();
     scroller.scrollTop = 0;
   }));
 
-  dialog.querySelector('[data-a11y-close]').addEventListener('click', () => dialog.close());
-  // clic en el fondo oscuro (fuera de la ventana)
-  dialog.addEventListener('click', (e) => { if (e.target === dialog) dialog.close(); });
+  dialog.addEventListener('click', (e) => {
+    // botón de cerrar o clic en el fondo oscuro (fuera de la ventana)
+    if (e.target === dialog || e.target.closest('[data-a11y-close]')) dialog.close();
+  });
 
   // --- arrastre ---
   // Al primer arrastre se pasa de "centrado con margin: auto" a left/top en px; la posición se recuerda mientras no se recargue.
@@ -37,8 +48,9 @@
   }
   addEventListener('resize', () => { if (dialog.open) keepInView(); });
 
-  bar.addEventListener('pointerdown', (e) => {
-    if (e.button !== 0 || e.target.closest('button')) return;
+  dialog.addEventListener('pointerdown', (e) => {
+    const bar = e.target.closest('.a11y-modal__bar');
+    if (!bar || e.button !== 0 || e.target.closest('button')) return;
     const r = dialog.getBoundingClientRect();
     const dx = e.clientX - r.left, dy = e.clientY - r.top;
     if (!moved) {
