@@ -11,10 +11,6 @@
     index = Math.min(Math.max(0, i), pages.length - 1);
     pages.forEach((p, n) => { p.hidden = n !== index; });
 
-    // los adornos del título cambian con la página (tijeras / osito)
-    const icons = pages[index].dataset.ppIcons;
-    win.querySelectorAll('[data-pp-hero]').forEach((img) => { img.hidden = img.dataset.ppHero !== icons; });
-
     // aviso para lectores de pantalla: "Agenda viajera, 2 de 4"
     const status = win.querySelector('[data-pp-status]');
     status.textContent = `${pages[index].getAttribute('aria-label')}, ${index + 1} ${status.dataset.of} ${pages.length}`;
@@ -30,6 +26,10 @@
     show(0);
     win.querySelector('[data-pp-status]').textContent = '';
   });
+
+  // las fotos no se pueden guardar con clic derecho ni arrastrándolas (solo disuade: no es una protección real)
+  dialog.addEventListener('contextmenu', (e) => { if (e.target.closest('.pp-cell')) e.preventDefault(); });
+  dialog.addEventListener('dragstart', (e) => { if (e.target.closest('.pp-cell')) e.preventDefault(); });
 
   dialog.addEventListener('click', (e) => {
     if (e.target.closest('[data-pp-next]')) show(index + 1, '[data-pp-next]');
