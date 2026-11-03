@@ -1,0 +1,21 @@
+/* Ventana "Ilustraciones": reutiliza el chrome y la paginación de papeleria-modal.css.
+   Cada página muestra una ilustración grande al centro y, a los lados, la anterior y la siguiente en miniatura. */
+@layer components {
+  .ilustraciones-modal .pp-page.il-page { grid-template-rows: auto var(--pp-h) auto; }
+
+  /* algunas ilustraciones tienen bordes transparentes: se ven sobre el blanco de la ventana, como en el diseño */
+  .ilustraciones-modal .pp-cell { background: none; }
+  .il-main { grid-row: 2; }
+  .il-side { grid-row: 2; align-self: center; block-size: 280px; }
+  .il-side { cursor: pointer; }
+  .il-side--prev { grid-column: 1; }
+  .il-side--next { grid-column: 3; }
+  .il-side .pp-img { object-position: 50% 50%; }
+
+  .pp-caption { grid-row: 3; }
+
+  @media (max-width: 40rem) {
+    .il-page .il-side { display: none; }
+    .il-page .il-main { grid-row: auto; aspect-ratio: 4 / 3; }
+  }
+}

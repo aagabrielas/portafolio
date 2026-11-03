@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="css/components/button.css">
   <link rel="stylesheet" href="css/components/a11y-modal.css">
   <link rel="stylesheet" href="css/components/papeleria-modal.css">
+  <link rel="stylesheet" href="css/components/ilustraciones-modal.css">
 </head>
 <body>
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
@@ -71,7 +72,7 @@
             <div class="window__body">
               <ul class="icon-links icon-links--thick">
                 <li><img src="assets/icon-papeleria.gif" alt="" width="20" height="20"><a href="#papeleria" data-modal-open="papeleria-modal" aria-haspopup="dialog">Papelería creativa</a></li>
-                <li><img src="assets/icon-ilustraciones.gif" alt="" width="20" height="20"><a href="#">Ilustraciones</a></li>
+                <li><img src="assets/icon-ilustraciones.gif" alt="" width="20" height="20"><a href="#ilustraciones" data-modal-open="ilustraciones-modal" aria-haspopup="dialog">Ilustraciones</a></li>
                 <li><img src="assets/icon-accesibilidad.gif" alt="" width="20" height="20"><a href="#accesibilidad" data-modal-open="a11y-modal" aria-haspopup="dialog">Accesibilidad</a></li>
               </ul>
             </div>
@@ -537,6 +538,169 @@
             <div class="pp-cell pp-cell--c"><img class="pp-img pp-img--top" src="assets/papeleria/papeleria-otras-cositas-04-caja-agenda-snoopy-sm.webp" alt="Open shipping box with a Snoopy planner among pink paper shreds" width="480" height="640" loading="lazy" decoding="async"></div>
             <div class="pp-cell pp-cell--d"><img class="pp-img pp-img--bottom" src="assets/papeleria/papeleria-otras-cositas-05-planner-mensual-sm.webp" alt="Monthly planner with black spiral binding on a lilac background" width="480" height="640" loading="lazy" decoding="async"></div>
             <div class="pp-caption"><h3>Other little things</h3><p>Assorted little things, like stickers for a UX workshop, party decorations and planners.</p></div>
+            <div class="pp-nav pp-nav--end"><button type="button" class="pp-nav__btn pp-nav__btn--prev" data-pp-prev><img src="assets/modal-flecha.gif" alt="" width="20" height="20"><span>Previous</span></button></div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog class="a11y-modal papeleria-modal ilustraciones-modal" id="ilustraciones-modal">
+    <div class="a11y-modal__win" lang="es">
+      <div class="a11y-modal__bar">
+        <div class="a11y-modal__label">
+          <img src="assets/icon-ilustraciones.gif" alt="" width="16" height="16">
+          <h2 class="a11y-modal__title" id="il-es-title">Ilustraciones</h2>
+        </div>
+        <div class="a11y-modal__actions">
+          <span class="a11y-modal__btn a11y-modal__btn--deco" aria-hidden="true"><svg viewBox="0 0 8 8"><path d="M0 6h7v2H0z"/></svg></span>
+          <span class="a11y-modal__btn a11y-modal__btn--deco" aria-hidden="true"><svg viewBox="0 0 8 8"><path fill-rule="evenodd" d="M0 0h8v8H0zM1 2v5h6V2z"/></svg></span>
+          <button type="button" class="a11y-modal__btn a11y-modal__btn--close" data-a11y-close aria-label="Cerrar">
+            <svg viewBox="0 0 8 8" aria-hidden="true"><path d="M0 0h2v1h1v1h2V1h1V0h2v2H7v1H6v2h1v1h1v2H6V7H5V6H3v1H2v1H0V6h1V5h1V3H1V2H0z"/></svg>
+          </button>
+        </div>
+      </div>
+      <div class="a11y-modal__frame">
+        <div class="a11y-modal__menu" aria-hidden="true"><span>Archivo</span><span>Editar</span><span>Herramientas</span><span>Ayuda</span></div>
+        <div class="a11y-modal__scroll" tabindex="0" role="region" aria-labelledby="il-es-title">
+          <p class="a11y-modal__hero" aria-hidden="true"><img src="assets/modal-planta.gif" alt="" width="20" height="20"><span>ILUSTRACIONES</span><img src="assets/modal-planta.gif" alt="" width="20" height="20" class="pp-flip"></p>
+          <p class="pp-intro">De vez en cuando me motivo y me pongo a dibujar. No tengo un estilo en particular en verdad, me gusta experimentar.</p>
+          <p class="divider a11y-modal__sep" aria-hidden="true">︵︵︵︵⋆⁺₊⋆ ☾ ⋆⁺₊⋆ ☁︎ ⋆⁺₊⋆ ☾ ⋆⁺₊⋆︵︵︵︵</p>
+          <p class="visually-hidden" role="status" data-pp-status data-of="de"></p>
+          <section class="pp-page il-page" data-pp-page aria-label="Lago de la furia">
+            <div class="pp-nav"><button type="button" class="pp-nav__btn pp-nav__btn--next" data-pp-next><span>Siguiente</span><img src="assets/modal-flecha.gif" alt="" width="20" height="20"></button></div>
+            
+            <div class="pp-cell pp-cell--main il-main"><img class="pp-img il-img" src="assets/ilustraciones/ilustraciones-01-lago-de-la-furia.webp" alt="Un Gyarados rojo emergiendo de un mar oscuro bajo un sol enorme" width="1016" height="760" loading="lazy" decoding="async"></div>
+            <div class="pp-cell il-side il-side--next"><img class="pp-img" src="assets/ilustraciones/ilustraciones-02-conflei.webp" alt="" width="1016" height="760" loading="lazy" decoding="async"></div>
+            <div class="pp-caption"><h3>Lago de la furia</h3><p>Un capítulo icónico de Pokémon.</p></div>
+            <div class="pp-nav pp-nav--end"><button type="button" class="pp-nav__btn pp-nav__btn--next" data-pp-next><span>Siguiente</span><img src="assets/modal-flecha.gif" alt="" width="20" height="20"></button></div>
+          </section>
+          <section class="pp-page il-page" data-pp-page aria-label="Conflei">
+            <div class="pp-nav"><button type="button" class="pp-nav__btn pp-nav__btn--prev" data-pp-prev><img src="assets/modal-flecha.gif" alt="" width="20" height="20"><span>Anterior</span></button><button type="button" class="pp-nav__btn pp-nav__btn--next" data-pp-next><span>Siguiente</span><img src="assets/modal-flecha.gif" alt="" width="20" height="20"></button></div>
+            <div class="pp-cell il-side il-side--prev"><img class="pp-img" src="assets/ilustraciones/ilustraciones-01-lago-de-la-furia.webp" alt="" width="1016" height="760" loading="lazy" decoding="async"></div>
+            <div class="pp-cell pp-cell--main il-main"><img class="pp-img il-img" src="assets/ilustraciones/ilustraciones-02-conflei.webp" alt="Retrato pintado de un perro sonriente sobre un fondo morado" width="1016" height="760" loading="lazy" decoding="async"></div>
+            <div class="pp-cell il-side il-side--next"><img class="pp-img" src="assets/ilustraciones/ilustraciones-03-casa-rosa.webp" alt="" width="1016" height="760" loading="lazy" decoding="async"></div>
+            <div class="pp-caption"><h3>Conflei</h3><p>El perrito travieso de un amigo muy querido.</p></div>
+            <div class="pp-nav pp-nav--end"><button type="button" class="pp-nav__btn pp-nav__btn--prev" data-pp-prev><img src="assets/modal-flecha.gif" alt="" width="20" height="20"><span>Anterior</span></button><button type="button" class="pp-nav__btn pp-nav__btn--next" data-pp-next><span>Siguiente</span><img src="assets/modal-flecha.gif" alt="" width="20" height="20"></button></div>
+          </section>
+          <section class="pp-page il-page" data-pp-page aria-label="La casa rosa">
+            <div class="pp-nav"><button type="button" class="pp-nav__btn pp-nav__btn--prev" data-pp-prev><img src="assets/modal-flecha.gif" alt="" width="20" height="20"><span>Anterior</span></button><button type="button" class="pp-nav__btn pp-nav__btn--next" data-pp-next><span>Siguiente</span><img src="assets/modal-flecha.gif" alt="" width="20" height="20"></button></div>
+            <div class="pp-cell il-side il-side--prev"><img class="pp-img" src="assets/ilustraciones/ilustraciones-02-conflei.webp" alt="" width="1016" height="760" loading="lazy" decoding="async"></div>
+            <div class="pp-cell pp-cell--main il-main"><img class="pp-img il-img" src="assets/ilustraciones/ilustraciones-03-casa-rosa.webp" alt="Casa de campo rosada con un buzón «Pink Panther» y un árbol" width="1016" height="760" loading="lazy" decoding="async"></div>
+            <div class="pp-cell il-side il-side--next"><img class="pp-img" src="assets/ilustraciones/ilustraciones-04-omega.webp" alt="" width="1016" height="760" loading="lazy" decoding="async"></div>
+            <div class="pp-caption"><h3>La casa rosa</h3><p>Una casa de campo bien rosada para la pantera.</p></div>
+            <div class="pp-nav pp-nav--end"><button type="button" class="pp-nav__btn pp-nav__btn--prev" data-pp-prev><img src="assets/modal-flecha.gif" alt="" width="20" height="20"><span>Anterior</span></button><button type="button" class="pp-nav__btn pp-nav__btn--next" data-pp-next><span>Siguiente</span><img src="assets/modal-flecha.gif" alt="" width="20" height="20"></button></div>
+          </section>
+          <section class="pp-page il-page" data-pp-page aria-label="Omega">
+            <div class="pp-nav"><button type="button" class="pp-nav__btn pp-nav__btn--prev" data-pp-prev><img src="assets/modal-flecha.gif" alt="" width="20" height="20"><span>Anterior</span></button><button type="button" class="pp-nav__btn pp-nav__btn--next" data-pp-next><span>Siguiente</span><img src="assets/modal-flecha.gif" alt="" width="20" height="20"></button></div>
+            <div class="pp-cell il-side il-side--prev"><img class="pp-img" src="assets/ilustraciones/ilustraciones-03-casa-rosa.webp" alt="" width="1016" height="760" loading="lazy" decoding="async"></div>
+            <div class="pp-cell pp-cell--main il-main"><img class="pp-img il-img" src="assets/ilustraciones/ilustraciones-04-omega.webp" alt="Retrato de un perro café con ojos amarillos sobre un fondo rojo" width="1016" height="760" loading="lazy" decoding="async"></div>
+            <div class="pp-cell il-side il-side--next"><img class="pp-img" src="assets/ilustraciones/ilustraciones-05-set-snoopy.webp" alt="" width="1016" height="760" loading="lazy" decoding="async"></div>
+            <div class="pp-caption"><h3>Omega</h3><p>Este es mi lindo perrito.</p></div>
+            <div class="pp-nav pp-nav--end"><button type="button" class="pp-nav__btn pp-nav__btn--prev" data-pp-prev><img src="assets/modal-flecha.gif" alt="" width="20" height="20"><span>Anterior</span></button><button type="button" class="pp-nav__btn pp-nav__btn--next" data-pp-next><span>Siguiente</span><img src="assets/modal-flecha.gif" alt="" width="20" height="20"></button></div>
+          </section>
+          <section class="pp-page il-page" data-pp-page aria-label="Set de Snoopy">
+            <div class="pp-nav"><button type="button" class="pp-nav__btn pp-nav__btn--prev" data-pp-prev><img src="assets/modal-flecha.gif" alt="" width="20" height="20"><span>Anterior</span></button><button type="button" class="pp-nav__btn pp-nav__btn--next" data-pp-next><span>Siguiente</span><img src="assets/modal-flecha.gif" alt="" width="20" height="20"></button></div>
+            <div class="pp-cell il-side il-side--prev"><img class="pp-img" src="assets/ilustraciones/ilustraciones-04-omega.webp" alt="" width="1016" height="760" loading="lazy" decoding="async"></div>
+            <div class="pp-cell pp-cell--main il-main"><img class="pp-img il-img" src="assets/ilustraciones/ilustraciones-05-set-snoopy.webp" alt="Snoopy y Woodstock cocinando, asando y celebrando en distintas escenas" width="1016" height="760" loading="lazy" decoding="async"></div>
+            <div class="pp-cell il-side il-side--next"><img class="pp-img" src="assets/ilustraciones/ilustraciones-06-punky.webp" alt="" width="1016" height="760" loading="lazy" decoding="async"></div>
+            <div class="pp-caption"><h3>Set de Snoopy</h3><p>Este es uno de mis favoritos, un set de muchas ilustraciones de Snoopy para un calendario.</p></div>
+            <div class="pp-nav pp-nav--end"><button type="button" class="pp-nav__btn pp-nav__btn--prev" data-pp-prev><img src="assets/modal-flecha.gif" alt="" width="20" height="20"><span>Anterior</span></button><button type="button" class="pp-nav__btn pp-nav__btn--next" data-pp-next><span>Siguiente</span><img src="assets/modal-flecha.gif" alt="" width="20" height="20"></button></div>
+          </section>
+          <section class="pp-page il-page" data-pp-page aria-label="Punky">
+            <div class="pp-nav"><button type="button" class="pp-nav__btn pp-nav__btn--prev" data-pp-prev><img src="assets/modal-flecha.gif" alt="" width="20" height="20"><span>Anterior</span></button><button type="button" class="pp-nav__btn pp-nav__btn--next" data-pp-next><span>Siguiente</span><img src="assets/modal-flecha.gif" alt="" width="20" height="20"></button></div>
+            <div class="pp-cell il-side il-side--prev"><img class="pp-img" src="assets/ilustraciones/ilustraciones-05-set-snoopy.webp" alt="" width="1016" height="760" loading="lazy" decoding="async"></div>
+            <div class="pp-cell pp-cell--main il-main"><img class="pp-img il-img" src="assets/ilustraciones/ilustraciones-06-punky.webp" alt="Silueta negra de un perro junto a una planta en maceta lila" width="1016" height="760" loading="lazy" decoding="async"></div>
+            <div class="pp-cell il-side il-side--next"><img class="pp-img" src="assets/ilustraciones/ilustraciones-07-sin-nombre.webp" alt="" width="1016" height="760" loading="lazy" decoding="async"></div>
+            <div class="pp-caption"><h3>Punky</h3><p>Parece que me gusta dibujar mascotas, jaja. Este es Punky, y se lo ilustré a su dueña para un set de post-its.</p></div>
+            <div class="pp-nav pp-nav--end"><button type="button" class="pp-nav__btn pp-nav__btn--prev" data-pp-prev><img src="assets/modal-flecha.gif" alt="" width="20" height="20"><span>Anterior</span></button><button type="button" class="pp-nav__btn pp-nav__btn--next" data-pp-next><span>Siguiente</span><img src="assets/modal-flecha.gif" alt="" width="20" height="20"></button></div>
+          </section>
+          <section class="pp-page il-page" data-pp-page aria-label="La sin nombre">
+            <div class="pp-nav"><button type="button" class="pp-nav__btn pp-nav__btn--prev" data-pp-prev><img src="assets/modal-flecha.gif" alt="" width="20" height="20"><span>Anterior</span></button></div>
+            <div class="pp-cell il-side il-side--prev"><img class="pp-img" src="assets/ilustraciones/ilustraciones-06-punky.webp" alt="" width="1016" height="760" loading="lazy" decoding="async"></div>
+            <div class="pp-cell pp-cell--main il-main"><img class="pp-img il-img" src="assets/ilustraciones/ilustraciones-07-sin-nombre.webp" alt="Boceto en líneas azules y rosadas de un personaje de ceño fruncido" width="1016" height="760" loading="lazy" decoding="async"></div>
+            
+            <div class="pp-caption"><h3>La sin nombre</h3><p>Solo una idea que se me ocurrió un día de personaje para un cómic.</p></div>
+            <div class="pp-nav pp-nav--end"><button type="button" class="pp-nav__btn pp-nav__btn--prev" data-pp-prev><img src="assets/modal-flecha.gif" alt="" width="20" height="20"><span>Anterior</span></button></div>
+          </section>
+        </div>
+      </div>
+    </div>
+    <div class="a11y-modal__win" lang="en">
+      <div class="a11y-modal__bar">
+        <div class="a11y-modal__label">
+          <img src="assets/icon-ilustraciones.gif" alt="" width="16" height="16">
+          <h2 class="a11y-modal__title" id="il-en-title">Illustrations</h2>
+        </div>
+        <div class="a11y-modal__actions">
+          <span class="a11y-modal__btn a11y-modal__btn--deco" aria-hidden="true"><svg viewBox="0 0 8 8"><path d="M0 6h7v2H0z"/></svg></span>
+          <span class="a11y-modal__btn a11y-modal__btn--deco" aria-hidden="true"><svg viewBox="0 0 8 8"><path fill-rule="evenodd" d="M0 0h8v8H0zM1 2v5h6V2z"/></svg></span>
+          <button type="button" class="a11y-modal__btn a11y-modal__btn--close" data-a11y-close aria-label="Close">
+            <svg viewBox="0 0 8 8" aria-hidden="true"><path d="M0 0h2v1h1v1h2V1h1V0h2v2H7v1H6v2h1v1h1v2H6V7H5V6H3v1H2v1H0V6h1V5h1V3H1V2H0z"/></svg>
+          </button>
+        </div>
+      </div>
+      <div class="a11y-modal__frame">
+        <div class="a11y-modal__menu" aria-hidden="true"><span>File</span><span>Edit</span><span>Tools</span><span>Help</span></div>
+        <div class="a11y-modal__scroll" tabindex="0" role="region" aria-labelledby="il-en-title">
+          <p class="a11y-modal__hero" aria-hidden="true"><img src="assets/modal-planta.gif" alt="" width="20" height="20"><span>ILLUSTRATIONS</span><img src="assets/modal-planta.gif" alt="" width="20" height="20" class="pp-flip"></p>
+          <p class="pp-intro">Every now and then I get motivated and start drawing. I don’t really have a particular style, I like to experiment.</p>
+          <p class="divider a11y-modal__sep" aria-hidden="true">︵︵︵︵⋆⁺₊⋆ ☾ ⋆⁺₊⋆ ☁︎ ⋆⁺₊⋆ ☾ ⋆⁺₊⋆︵︵︵︵</p>
+          <p class="visually-hidden" role="status" data-pp-status data-of="of"></p>
+          <section class="pp-page il-page" data-pp-page aria-label="Lake of Rage">
+            <div class="pp-nav"><button type="button" class="pp-nav__btn pp-nav__btn--next" data-pp-next><span>Next</span><img src="assets/modal-flecha.gif" alt="" width="20" height="20"></button></div>
+            
+            <div class="pp-cell pp-cell--main il-main"><img class="pp-img il-img" src="assets/ilustraciones/ilustraciones-01-lago-de-la-furia.webp" alt="A red Gyarados rising from a dark sea under a huge sun" width="1016" height="760" loading="lazy" decoding="async"></div>
+            <div class="pp-cell il-side il-side--next"><img class="pp-img" src="assets/ilustraciones/ilustraciones-02-conflei.webp" alt="" width="1016" height="760" loading="lazy" decoding="async"></div>
+            <div class="pp-caption"><h3>Lake of Rage</h3><p>An iconic Pokémon episode.</p></div>
+            <div class="pp-nav pp-nav--end"><button type="button" class="pp-nav__btn pp-nav__btn--next" data-pp-next><span>Next</span><img src="assets/modal-flecha.gif" alt="" width="20" height="20"></button></div>
+          </section>
+          <section class="pp-page il-page" data-pp-page aria-label="Conflei">
+            <div class="pp-nav"><button type="button" class="pp-nav__btn pp-nav__btn--prev" data-pp-prev><img src="assets/modal-flecha.gif" alt="" width="20" height="20"><span>Previous</span></button><button type="button" class="pp-nav__btn pp-nav__btn--next" data-pp-next><span>Next</span><img src="assets/modal-flecha.gif" alt="" width="20" height="20"></button></div>
+            <div class="pp-cell il-side il-side--prev"><img class="pp-img" src="assets/ilustraciones/ilustraciones-01-lago-de-la-furia.webp" alt="" width="1016" height="760" loading="lazy" decoding="async"></div>
+            <div class="pp-cell pp-cell--main il-main"><img class="pp-img il-img" src="assets/ilustraciones/ilustraciones-02-conflei.webp" alt="Painted portrait of a smiling dog on a purple background" width="1016" height="760" loading="lazy" decoding="async"></div>
+            <div class="pp-cell il-side il-side--next"><img class="pp-img" src="assets/ilustraciones/ilustraciones-03-casa-rosa.webp" alt="" width="1016" height="760" loading="lazy" decoding="async"></div>
+            <div class="pp-caption"><h3>Conflei</h3><p>A dear friend’s mischievous little dog.</p></div>
+            <div class="pp-nav pp-nav--end"><button type="button" class="pp-nav__btn pp-nav__btn--prev" data-pp-prev><img src="assets/modal-flecha.gif" alt="" width="20" height="20"><span>Previous</span></button><button type="button" class="pp-nav__btn pp-nav__btn--next" data-pp-next><span>Next</span><img src="assets/modal-flecha.gif" alt="" width="20" height="20"></button></div>
+          </section>
+          <section class="pp-page il-page" data-pp-page aria-label="The pink house">
+            <div class="pp-nav"><button type="button" class="pp-nav__btn pp-nav__btn--prev" data-pp-prev><img src="assets/modal-flecha.gif" alt="" width="20" height="20"><span>Previous</span></button><button type="button" class="pp-nav__btn pp-nav__btn--next" data-pp-next><span>Next</span><img src="assets/modal-flecha.gif" alt="" width="20" height="20"></button></div>
+            <div class="pp-cell il-side il-side--prev"><img class="pp-img" src="assets/ilustraciones/ilustraciones-02-conflei.webp" alt="" width="1016" height="760" loading="lazy" decoding="async"></div>
+            <div class="pp-cell pp-cell--main il-main"><img class="pp-img il-img" src="assets/ilustraciones/ilustraciones-03-casa-rosa.webp" alt="Pink country house with a “Pink Panther” mailbox and a tree" width="1016" height="760" loading="lazy" decoding="async"></div>
+            <div class="pp-cell il-side il-side--next"><img class="pp-img" src="assets/ilustraciones/ilustraciones-04-omega.webp" alt="" width="1016" height="760" loading="lazy" decoding="async"></div>
+            <div class="pp-caption"><h3>The pink house</h3><p>A very pink country house for the panther.</p></div>
+            <div class="pp-nav pp-nav--end"><button type="button" class="pp-nav__btn pp-nav__btn--prev" data-pp-prev><img src="assets/modal-flecha.gif" alt="" width="20" height="20"><span>Previous</span></button><button type="button" class="pp-nav__btn pp-nav__btn--next" data-pp-next><span>Next</span><img src="assets/modal-flecha.gif" alt="" width="20" height="20"></button></div>
+          </section>
+          <section class="pp-page il-page" data-pp-page aria-label="Omega">
+            <div class="pp-nav"><button type="button" class="pp-nav__btn pp-nav__btn--prev" data-pp-prev><img src="assets/modal-flecha.gif" alt="" width="20" height="20"><span>Previous</span></button><button type="button" class="pp-nav__btn pp-nav__btn--next" data-pp-next><span>Next</span><img src="assets/modal-flecha.gif" alt="" width="20" height="20"></button></div>
+            <div class="pp-cell il-side il-side--prev"><img class="pp-img" src="assets/ilustraciones/ilustraciones-03-casa-rosa.webp" alt="" width="1016" height="760" loading="lazy" decoding="async"></div>
+            <div class="pp-cell pp-cell--main il-main"><img class="pp-img il-img" src="assets/ilustraciones/ilustraciones-04-omega.webp" alt="Portrait of a brown dog with yellow eyes on a red background" width="1016" height="760" loading="lazy" decoding="async"></div>
+            <div class="pp-cell il-side il-side--next"><img class="pp-img" src="assets/ilustraciones/ilustraciones-05-set-snoopy.webp" alt="" width="1016" height="760" loading="lazy" decoding="async"></div>
+            <div class="pp-caption"><h3>Omega</h3><p>This is my sweet dog.</p></div>
+            <div class="pp-nav pp-nav--end"><button type="button" class="pp-nav__btn pp-nav__btn--prev" data-pp-prev><img src="assets/modal-flecha.gif" alt="" width="20" height="20"><span>Previous</span></button><button type="button" class="pp-nav__btn pp-nav__btn--next" data-pp-next><span>Next</span><img src="assets/modal-flecha.gif" alt="" width="20" height="20"></button></div>
+          </section>
+          <section class="pp-page il-page" data-pp-page aria-label="Snoopy set">
+            <div class="pp-nav"><button type="button" class="pp-nav__btn pp-nav__btn--prev" data-pp-prev><img src="assets/modal-flecha.gif" alt="" width="20" height="20"><span>Previous</span></button><button type="button" class="pp-nav__btn pp-nav__btn--next" data-pp-next><span>Next</span><img src="assets/modal-flecha.gif" alt="" width="20" height="20"></button></div>
+            <div class="pp-cell il-side il-side--prev"><img class="pp-img" src="assets/ilustraciones/ilustraciones-04-omega.webp" alt="" width="1016" height="760" loading="lazy" decoding="async"></div>
+            <div class="pp-cell pp-cell--main il-main"><img class="pp-img il-img" src="assets/ilustraciones/ilustraciones-05-set-snoopy.webp" alt="Snoopy and Woodstock cooking, grilling and celebrating in different scenes" width="1016" height="760" loading="lazy" decoding="async"></div>
+            <div class="pp-cell il-side il-side--next"><img class="pp-img" src="assets/ilustraciones/ilustraciones-06-punky.webp" alt="" width="1016" height="760" loading="lazy" decoding="async"></div>
+            <div class="pp-caption"><h3>Snoopy set</h3><p>One of my favorites: a set of many Snoopy illustrations for a calendar.</p></div>
+            <div class="pp-nav pp-nav--end"><button type="button" class="pp-nav__btn pp-nav__btn--prev" data-pp-prev><img src="assets/modal-flecha.gif" alt="" width="20" height="20"><span>Previous</span></button><button type="button" class="pp-nav__btn pp-nav__btn--next" data-pp-next><span>Next</span><img src="assets/modal-flecha.gif" alt="" width="20" height="20"></button></div>
+          </section>
+          <section class="pp-page il-page" data-pp-page aria-label="Punky">
+            <div class="pp-nav"><button type="button" class="pp-nav__btn pp-nav__btn--prev" data-pp-prev><img src="assets/modal-flecha.gif" alt="" width="20" height="20"><span>Previous</span></button><button type="button" class="pp-nav__btn pp-nav__btn--next" data-pp-next><span>Next</span><img src="assets/modal-flecha.gif" alt="" width="20" height="20"></button></div>
+            <div class="pp-cell il-side il-side--prev"><img class="pp-img" src="assets/ilustraciones/ilustraciones-05-set-snoopy.webp" alt="" width="1016" height="760" loading="lazy" decoding="async"></div>
+            <div class="pp-cell pp-cell--main il-main"><img class="pp-img il-img" src="assets/ilustraciones/ilustraciones-06-punky.webp" alt="Black dog silhouette next to a purple potted plant" width="1016" height="760" loading="lazy" decoding="async"></div>
+            <div class="pp-cell il-side il-side--next"><img class="pp-img" src="assets/ilustraciones/ilustraciones-07-sin-nombre.webp" alt="" width="1016" height="760" loading="lazy" decoding="async"></div>
+            <div class="pp-caption"><h3>Punky</h3><p>Looks like I like drawing pets, haha. This is Punky, whom I illustrated for his owner for a set of post-its.</p></div>
+            <div class="pp-nav pp-nav--end"><button type="button" class="pp-nav__btn pp-nav__btn--prev" data-pp-prev><img src="assets/modal-flecha.gif" alt="" width="20" height="20"><span>Previous</span></button><button type="button" class="pp-nav__btn pp-nav__btn--next" data-pp-next><span>Next</span><img src="assets/modal-flecha.gif" alt="" width="20" height="20"></button></div>
+          </section>
+          <section class="pp-page il-page" data-pp-page aria-label="The nameless one">
+            <div class="pp-nav"><button type="button" class="pp-nav__btn pp-nav__btn--prev" data-pp-prev><img src="assets/modal-flecha.gif" alt="" width="20" height="20"><span>Previous</span></button></div>
+            <div class="pp-cell il-side il-side--prev"><img class="pp-img" src="assets/ilustraciones/ilustraciones-06-punky.webp" alt="" width="1016" height="760" loading="lazy" decoding="async"></div>
+            <div class="pp-cell pp-cell--main il-main"><img class="pp-img il-img" src="assets/ilustraciones/ilustraciones-07-sin-nombre.webp" alt="Blue and pink line sketch of a frowning character" width="1016" height="760" loading="lazy" decoding="async"></div>
+            
+            <div class="pp-caption"><h3>The nameless one</h3><p>Just a character idea for a comic that came to me one day.</p></div>
             <div class="pp-nav pp-nav--end"><button type="button" class="pp-nav__btn pp-nav__btn--prev" data-pp-prev><img src="assets/modal-flecha.gif" alt="" width="20" height="20"><span>Previous</span></button></div>
           </section>
         </div>

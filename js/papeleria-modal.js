@@ -1,10 +1,7 @@
-/* Ventana "Papelería creativa": pasa entre las agrupaciones de fotos con Anterior / Siguiente.
+/* Ventanas "Papelería creativa" e "Ilustraciones": pasan entre sus páginas con Anterior / Siguiente.
    Cada ventana de idioma trae sus páginas ([data-pp-page]); solo una está visible. Al abrir vuelve a la primera.
    La apertura, el arrastre y el cierre los maneja js/a11y-modal.js. */
-(() => {
-  const dialog = document.getElementById('papeleria-modal');
-  if (!dialog) return;
-
+document.querySelectorAll('dialog.papeleria-modal').forEach((dialog) => {
   let win = null, pages = [], index = 0;
 
   const show = (i, focusNav) => {
@@ -32,7 +29,8 @@
   dialog.addEventListener('dragstart', (e) => { if (e.target.closest('.pp-cell')) e.preventDefault(); });
 
   dialog.addEventListener('click', (e) => {
-    if (e.target.closest('[data-pp-next]')) show(index + 1, '[data-pp-next]');
-    else if (e.target.closest('[data-pp-prev]')) show(index - 1, '[data-pp-prev]');
+    // en Ilustraciones, las miniaturas de los lados también avanzan / retroceden (los botones siguen siendo la vía accesible)
+    if (e.target.closest('[data-pp-next], .il-side--next')) show(index + 1, '[data-pp-next]');
+    else if (e.target.closest('[data-pp-prev], .il-side--prev')) show(index - 1, '[data-pp-prev]');
   });
-})();
+});
