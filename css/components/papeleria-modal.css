@@ -1,0 +1,63 @@
+/* Ventana "Papelería creativa": reutiliza el chrome de a11y-modal.css (barra, menú, marco, scroll) y suma
+   una galería de 5 fotos por página con navegación Anterior / Siguiente (js/papeleria-modal.js) */
+@layer components {
+  .a11y-modal.papeleria-modal {
+    margin: auto;
+    inline-size: min(67rem, calc(100vw - 2rem));
+    block-size: min(894px, calc(100dvh - 2rem));
+  }
+
+  .papeleria-modal .a11y-modal__scroll { padding-block-end: 1rem; justify-items: center; }
+  .papeleria-modal .a11y-modal__hero { justify-self: stretch; }
+  .papeleria-modal .a11y-modal__hero img[hidden] { display: none; }
+  .pp-flip { transform: rotate(180deg); }
+
+  .pp-intro { max-inline-size: 45rem; text-align: center; line-height: 1.3; }
+
+  /* página: 3 columnas (lados 230 px, centro ancho) × 2 filas; la foto principal ocupa las dos filas */
+  .pp-page {
+    inline-size: 100%;
+    display: grid; grid-template-columns: 1fr 2.209fr 1fr; gap: 14px;
+  }
+  .pp-page[hidden] { display: none; }
+
+  .pp-nav {
+    grid-column: 2; display: flex; justify-content: space-between; align-items: center; gap: 1.25rem;
+    min-block-size: 20px; margin-block-end: 6px;
+  }
+  .pp-nav__btn {
+    display: inline-flex; align-items: center; gap: 4px; padding: 0;
+    font: inherit; line-height: 1.3; color: #000; background: none; border: 0; cursor: pointer;
+    text-decoration: underline; text-underline-offset: 0.15em;
+  }
+  .pp-nav__btn img { flex: none; inline-size: 20px; block-size: 20px; image-rendering: pixelated; }
+  .pp-nav__btn--prev img { transform: rotate(180deg); }
+  .pp-nav__btn--next { margin-inline-start: auto; }
+
+  .pp-cell { position: relative; overflow: hidden; background: #eef7fd; min-inline-size: 0; }
+  .pp-cell--a, .pp-cell--b, .pp-cell--c, .pp-cell--d { aspect-ratio: 230 / 237.5; }
+  .pp-cell--a { grid-column: 1; grid-row: 2; }
+  .pp-cell--b { grid-column: 1; grid-row: 3; }
+  .pp-cell--main { grid-column: 2; grid-row: 2 / span 2; }
+  .pp-cell--c { grid-column: 3; grid-row: 2; }
+  .pp-cell--d { grid-column: 3; grid-row: 3; }
+  /* las fotos son verticales: se recortan a la altura de la celda, con el encuadre que se definió en el diseño */
+  .pp-img { position: absolute; inset: 0; inline-size: 100%; block-size: 100%; object-fit: cover; }
+  .pp-img--main { object-position: 50% 49.5%; }
+  .pp-img--top { object-position: 50% 34.3%; }
+  .pp-img--bottom { object-position: 50% 52.2%; }
+
+  .pp-caption { grid-column: 2; grid-row: 4; padding-inline: 14px; display: grid; gap: 1px; align-content: start; }
+  .pp-caption h3 { font-family: var(--font-hero); font-weight: 700; font-size: 1.1875rem; line-height: 1.25; color: #0e0e0e; }
+  .pp-caption p { line-height: 1.3; }
+
+  @media (max-width: 40rem) {
+    .a11y-modal.papeleria-modal { margin-inline: 0.5rem; inline-size: calc(100vw - 1rem); }
+    .pp-page { grid-template-columns: 1fr 1fr; gap: 8px; }
+    .pp-nav, .pp-caption { grid-column: 1 / -1; }
+    .pp-caption { grid-row: auto; padding-inline: 0; }
+    .pp-cell--main { grid-column: 1 / -1; grid-row: auto; aspect-ratio: 1; }
+    .pp-cell--a, .pp-cell--b, .pp-cell--c, .pp-cell--d { grid-column: auto; grid-row: auto; aspect-ratio: 1; }
+    .pp-caption { order: 1; }
+  }
+}
