@@ -12,7 +12,7 @@
   .il-side--next { grid-column: 3; }
   .il-side .pp-img { object-position: 50% 50%; }
 
-  .pp-caption { grid-row: 3; }
+  .il-page .pp-caption { grid-row: 3; }
 
   @media (max-width: 40rem) {
     .ilustraciones-modal .pp-page.il-page { grid-template-rows: none; }
